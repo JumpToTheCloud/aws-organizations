@@ -5,6 +5,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   author: 'Jump to the Cloud',
   authorAddress: 'antonio.marquez@jumptothecloud.tech',
   cdkVersion: '2.120.0',
+  constructsVersion: '10.3.0',
   defaultReleaseBranch: 'main',
   jsiiVersion: '~5.3.0',
   name: '@jttc/aws-organizations',

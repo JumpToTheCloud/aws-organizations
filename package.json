@@ -38,7 +38,7 @@
     "@typescript-eslint/parser": "^6",
     "aws-cdk-lib": "2.120.0",
     "commitizen": "^4.3.0",
-    "constructs": "10.0.5",
+    "constructs": "10.3.0",
     "cz-customizable": "^7.0.0",
     "eslint": "^8",
     "eslint-config-prettier": "^9.1.0",
@@ -60,7 +60,7 @@
   },
   "peerDependencies": {
     "aws-cdk-lib": "^2.120.0",
-    "constructs": "^10.0.5"
+    "constructs": "^10.3.0"
   },
   "keywords": [
     "aws",
