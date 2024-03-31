@@ -1,1 +1,1 @@
-# replace this
+# AWS Organizations Construct Library

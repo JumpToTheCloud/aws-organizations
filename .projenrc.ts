@@ -7,11 +7,10 @@ const project = new awscdk.AwsCdkConstructLibrary({
   cdkVersion: '2.120.0',
   defaultReleaseBranch: 'main',
   jsiiVersion: '~5.3.0',
-  name: 'cdk-construct-library-template',
+  name: '@jttc/aws-organizations',
   projenrcTs: true,
-  repositoryUrl:
-    'git@github.com:JumpToTheCloud/cdk-construct-library-template.git',
-  keywords: ['aws', 'cdk'],
+  repositoryUrl: 'git@github.com:JumpToTheCloud/caws-organizations.git',
+  keywords: ['aws', 'cdk', 'organizations'],
   prettier: true,
   prettierOptions: {
     settings: {
@@ -28,8 +27,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
       verbose: true,
     },
   },
+  prerelease: 'alpha',
   releasableCommits: ReleasableCommits.featuresAndFixes(),
-  releaseFailureIssue: true,
   // deps: [],                /* Runtime dependencies of this module. */
   // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
   devDeps: ['commitizen', 'cz-customizable'],
