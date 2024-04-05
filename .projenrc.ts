@@ -29,6 +29,23 @@ const project = new awscdk.AwsCdkConstructLibrary({
       verbose: true,
     },
   },
+  githubOptions: {
+    pullRequestLintOptions: {
+      semanticTitleOptions: {
+        types: [
+          'feat',
+          'fix',
+          'chore',
+          'docs',
+          'style',
+          'refactor',
+          'test',
+          'revert',
+          'ci',
+        ],
+      },
+    },
+  },
   prerelease: 'alpha',
   releasableCommits: ReleasableCommits.featuresAndFixes(),
   // deps: [],                /* Runtime dependencies of this module. */
@@ -116,6 +133,8 @@ deployDocs?.addJob('deploy-docs', {
       run: [
         'pip install --upgrade pip',
         'pip install -r docs/requirements.txt',
+        'pip install mkdocs-material',
+        'pip install mike',
       ].join('\n'),
     },
     {
