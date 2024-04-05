@@ -4,6 +4,15 @@
 
 ### Organization <a name="Organization" id="@jttc/aws-organizations.Organization"></a>
 
+Create a new organization.
+
+*Example*
+
+```typescript
+   new Organization(this, 'Organization');
+```
+
+
 #### Initializers <a name="Initializers" id="@jttc/aws-organizations.Organization.Initializer"></a>
 
 ```typescript
@@ -161,6 +170,17 @@ Organization.fromOrganizationAttributes(scope: Construct, id: string, attributes
 ```
 
 Import a Organization.
+
+*Example*
+
+```typescript
+   Organization.fromOrganizationAttributes(this, 'Organization', {
+     organizationId: 'o-xxxx',
+     organizationRootId: 'r-xxxx',
+     managementAccountId: 'xxxx',
+   });
+```
+
 
 ###### `scope`<sup>Required</sup> <a name="scope" id="@jttc/aws-organizations.Organization.fromOrganizationAttributes.parameter.scope"></a>
 
