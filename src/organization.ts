@@ -80,11 +80,19 @@ export interface OrganizationProps {
 }
 
 /**
- *
+ * Create a new organization
+ * @example
+ *    new Organization(this, 'Organization');
  */
 export class Organization extends OrganizationBase {
   /**
    * Import a Organization
+   * @example
+   *    Organization.fromOrganizationAttributes(this, 'Organization', {
+   *      organizationId: 'o-xxxx',
+   *      organizationRootId: 'r-xxxx',
+   *      managementAccountId: 'xxxx',
+   *    });
    */
   public static fromOrganizationAttributes(
     scope: Construct,
