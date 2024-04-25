@@ -160,7 +160,7 @@ deployDocs?.addJob('deploy-docs', {
       },
       run: [
         'echo ${{ env.VERSION }}',
-        'mike deploy --version ${{ env.VERSION }} --alias ${{ env.ALIAS }}',
+        'mike deploy --push --update-aliases ${{ env.VERSION }} ${{ env.ALIAS }}',
         'mike set-default --push ${{ env.ALIAS }}',
       ].join('\n'),
     },
