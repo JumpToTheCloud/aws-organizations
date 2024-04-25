@@ -80,12 +80,12 @@ deployDocs?.on({
   workflowCall: {
     inputs: {
       version: {
-        required: true,
+        required: false,
         type: 'string',
         description: 'Version to build and publish docs',
       },
       alias: {
-        required: true,
+        required: false,
         type: 'string',
         description: 'Alias to associate version (latest, stage)',
       },
@@ -156,11 +156,11 @@ deployDocs?.addJob('deploy-docs', {
       name: 'Build and deploy documentation',
       env: {
         ALIAS: 'latest',
-        VERSION: '${{ needs.deploy-docs.outputs.version }}',
+        VERSION: '${{ steps.getVersion.outputs.version }}',
       },
       run: [
         'echo ${{ env.VERSION }}',
-        'mike deploy --version ${{ env.VERSION }} --alias ${{ env.ALIAS }}',
+        'mike deploy --push --update-aliases ${{ env.VERSION }} ${{ env.ALIAS }}',
         'mike set-default --push ${{ env.ALIAS }}',
       ].join('\n'),
     },
