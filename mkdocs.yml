@@ -32,6 +32,7 @@ theme:
     - content.code.annotate
     - content.code.copy
     - announce.dismiss
+  custom_dir: docs/overrides
 
 extra:
   version:
