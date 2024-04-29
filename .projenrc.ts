@@ -113,7 +113,7 @@ deployDocs?.addJob('deploy-docs', {
       },
     },
     {
-      uses: 'actions/setup-python@v4',
+      uses: 'actions/setup-python@v5',
       with: {
         pythonVersion: '3.8',
       },
@@ -122,7 +122,7 @@ deployDocs?.addJob('deploy-docs', {
       run: 'echo "cache_id=$(date --utc "+%V")" >> $GITHUB_ENV',
     },
     {
-      uses: 'actions/cache@v3',
+      uses: 'actions/cache@v4',
       with: {
         key: 'mkdocs-material-${{ env.cache_id }}',
         path: '.cache',
