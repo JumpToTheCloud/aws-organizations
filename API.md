@@ -559,6 +559,521 @@ The unique identifier (ID) of the organization root.
 ---
 
 
+### OrganizationUnit <a name="OrganizationUnit" id="@jttc/aws-organizations.OrganizationUnit"></a>
+
+Create a new Organization Unit.
+
+#### Initializers <a name="Initializers" id="@jttc/aws-organizations.OrganizationUnit.Initializer"></a>
+
+```typescript
+import { OrganizationUnit } from '@jttc/aws-organizations'
+
+new OrganizationUnit(scope: Construct, id: string, props: IOrganizationUnitProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@jttc/aws-organizations.OrganizationUnit.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#@jttc/aws-organizations.OrganizationUnit.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@jttc/aws-organizations.OrganizationUnit.Initializer.parameter.props">props</a></code> | <code><a href="#@jttc/aws-organizations.IOrganizationUnitProps">IOrganizationUnitProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="@jttc/aws-organizations.OrganizationUnit.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="@jttc/aws-organizations.OrganizationUnit.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="@jttc/aws-organizations.OrganizationUnit.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#@jttc/aws-organizations.IOrganizationUnitProps">IOrganizationUnitProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@jttc/aws-organizations.OrganizationUnit.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@jttc/aws-organizations.OrganizationUnit.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
+
+---
+
+##### `toString` <a name="toString" id="@jttc/aws-organizations.OrganizationUnit.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="@jttc/aws-organizations.OrganizationUnit.applyRemovalPolicy"></a>
+
+```typescript
+public applyRemovalPolicy(policy: RemovalPolicy): void
+```
+
+Apply the given removal policy to this resource.
+
+The Removal Policy controls what happens to this resource when it stops
+being managed by CloudFormation, either because you've removed it from the
+CDK application or because you've made a change that requires the resource
+to be replaced.
+
+The resource can be deleted (`RemovalPolicy.DESTROY`), or left in your AWS
+account for data recovery and cleanup later (`RemovalPolicy.RETAIN`).
+
+###### `policy`<sup>Required</sup> <a name="policy" id="@jttc/aws-organizations.OrganizationUnit.applyRemovalPolicy.parameter.policy"></a>
+
+- *Type:* aws-cdk-lib.RemovalPolicy
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@jttc/aws-organizations.OrganizationUnit.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@jttc/aws-organizations.OrganizationUnit.isOwnedResource">isOwnedResource</a></code> | Returns true if the construct was created by CDK, and false otherwise. |
+| <code><a href="#@jttc/aws-organizations.OrganizationUnit.isResource">isResource</a></code> | Check whether the given construct is a Resource. |
+| <code><a href="#@jttc/aws-organizations.OrganizationUnit.fromOrganizationUnitAttributes">fromOrganizationUnitAttributes</a></code> | *No description.* |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@jttc/aws-organizations.OrganizationUnit.isConstruct"></a>
+
+```typescript
+import { OrganizationUnit } from '@jttc/aws-organizations'
+
+OrganizationUnit.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@jttc/aws-organizations.OrganizationUnit.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isOwnedResource` <a name="isOwnedResource" id="@jttc/aws-organizations.OrganizationUnit.isOwnedResource"></a>
+
+```typescript
+import { OrganizationUnit } from '@jttc/aws-organizations'
+
+OrganizationUnit.isOwnedResource(construct: IConstruct)
+```
+
+Returns true if the construct was created by CDK, and false otherwise.
+
+###### `construct`<sup>Required</sup> <a name="construct" id="@jttc/aws-organizations.OrganizationUnit.isOwnedResource.parameter.construct"></a>
+
+- *Type:* constructs.IConstruct
+
+---
+
+##### `isResource` <a name="isResource" id="@jttc/aws-organizations.OrganizationUnit.isResource"></a>
+
+```typescript
+import { OrganizationUnit } from '@jttc/aws-organizations'
+
+OrganizationUnit.isResource(construct: IConstruct)
+```
+
+Check whether the given construct is a Resource.
+
+###### `construct`<sup>Required</sup> <a name="construct" id="@jttc/aws-organizations.OrganizationUnit.isResource.parameter.construct"></a>
+
+- *Type:* constructs.IConstruct
+
+---
+
+##### `fromOrganizationUnitAttributes` <a name="fromOrganizationUnitAttributes" id="@jttc/aws-organizations.OrganizationUnit.fromOrganizationUnitAttributes"></a>
+
+```typescript
+import { OrganizationUnit } from '@jttc/aws-organizations'
+
+OrganizationUnit.fromOrganizationUnitAttributes(scope: Construct, id: string, attrs: OrganizationUnitAttributes)
+```
+
+###### `scope`<sup>Required</sup> <a name="scope" id="@jttc/aws-organizations.OrganizationUnit.fromOrganizationUnitAttributes.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+###### `id`<sup>Required</sup> <a name="id" id="@jttc/aws-organizations.OrganizationUnit.fromOrganizationUnitAttributes.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+###### `attrs`<sup>Required</sup> <a name="attrs" id="@jttc/aws-organizations.OrganizationUnit.fromOrganizationUnitAttributes.parameter.attrs"></a>
+
+- *Type:* <a href="#@jttc/aws-organizations.OrganizationUnitAttributes">OrganizationUnitAttributes</a>
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@jttc/aws-organizations.OrganizationUnit.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@jttc/aws-organizations.OrganizationUnit.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
+| <code><a href="#@jttc/aws-organizations.OrganizationUnit.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
+| <code><a href="#@jttc/aws-organizations.OrganizationUnit.property.organizationUnitArn">organizationUnitArn</a></code> | <code>string</code> | The ARN of the OU. |
+| <code><a href="#@jttc/aws-organizations.OrganizationUnit.property.organizationUnitId">organizationUnitId</a></code> | <code>string</code> | The ID of the OU. |
+| <code><a href="#@jttc/aws-organizations.OrganizationUnit.property.organizationUnitName">organizationUnitName</a></code> | <code>string</code> | The Organization Unit name. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@jttc/aws-organizations.OrganizationUnit.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="@jttc/aws-organizations.OrganizationUnit.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.ResourceEnvironment
+
+The environment this resource belongs to.
+
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.
+
+---
+
+##### `stack`<sup>Required</sup> <a name="stack" id="@jttc/aws-organizations.OrganizationUnit.property.stack"></a>
+
+```typescript
+public readonly stack: Stack;
+```
+
+- *Type:* aws-cdk-lib.Stack
+
+The stack in which this resource is defined.
+
+---
+
+##### `organizationUnitArn`<sup>Required</sup> <a name="organizationUnitArn" id="@jttc/aws-organizations.OrganizationUnit.property.organizationUnitArn"></a>
+
+```typescript
+public readonly organizationUnitArn: string;
+```
+
+- *Type:* string
+
+The ARN of the OU.
+
+---
+
+##### `organizationUnitId`<sup>Required</sup> <a name="organizationUnitId" id="@jttc/aws-organizations.OrganizationUnit.property.organizationUnitId"></a>
+
+```typescript
+public readonly organizationUnitId: string;
+```
+
+- *Type:* string
+
+The ID of the OU.
+
+---
+
+##### `organizationUnitName`<sup>Required</sup> <a name="organizationUnitName" id="@jttc/aws-organizations.OrganizationUnit.property.organizationUnitName"></a>
+
+```typescript
+public readonly organizationUnitName: string;
+```
+
+- *Type:* string
+
+The Organization Unit name.
+
+---
+
+
+### OrganizationUnitBase <a name="OrganizationUnitBase" id="@jttc/aws-organizations.OrganizationUnitBase"></a>
+
+- *Implements:* <a href="#@jttc/aws-organizations.IOrganizationUnits">IOrganizationUnits</a>
+
+#### Initializers <a name="Initializers" id="@jttc/aws-organizations.OrganizationUnitBase.Initializer"></a>
+
+```typescript
+import { OrganizationUnitBase } from '@jttc/aws-organizations'
+
+new OrganizationUnitBase(scope: Construct, id: string, props?: ResourceProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@jttc/aws-organizations.OrganizationUnitBase.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#@jttc/aws-organizations.OrganizationUnitBase.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@jttc/aws-organizations.OrganizationUnitBase.Initializer.parameter.props">props</a></code> | <code>aws-cdk-lib.ResourceProps</code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="@jttc/aws-organizations.OrganizationUnitBase.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="@jttc/aws-organizations.OrganizationUnitBase.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Optional</sup> <a name="props" id="@jttc/aws-organizations.OrganizationUnitBase.Initializer.parameter.props"></a>
+
+- *Type:* aws-cdk-lib.ResourceProps
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@jttc/aws-organizations.OrganizationUnitBase.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@jttc/aws-organizations.OrganizationUnitBase.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
+
+---
+
+##### `toString` <a name="toString" id="@jttc/aws-organizations.OrganizationUnitBase.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="@jttc/aws-organizations.OrganizationUnitBase.applyRemovalPolicy"></a>
+
+```typescript
+public applyRemovalPolicy(policy: RemovalPolicy): void
+```
+
+Apply the given removal policy to this resource.
+
+The Removal Policy controls what happens to this resource when it stops
+being managed by CloudFormation, either because you've removed it from the
+CDK application or because you've made a change that requires the resource
+to be replaced.
+
+The resource can be deleted (`RemovalPolicy.DESTROY`), or left in your AWS
+account for data recovery and cleanup later (`RemovalPolicy.RETAIN`).
+
+###### `policy`<sup>Required</sup> <a name="policy" id="@jttc/aws-organizations.OrganizationUnitBase.applyRemovalPolicy.parameter.policy"></a>
+
+- *Type:* aws-cdk-lib.RemovalPolicy
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@jttc/aws-organizations.OrganizationUnitBase.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@jttc/aws-organizations.OrganizationUnitBase.isOwnedResource">isOwnedResource</a></code> | Returns true if the construct was created by CDK, and false otherwise. |
+| <code><a href="#@jttc/aws-organizations.OrganizationUnitBase.isResource">isResource</a></code> | Check whether the given construct is a Resource. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@jttc/aws-organizations.OrganizationUnitBase.isConstruct"></a>
+
+```typescript
+import { OrganizationUnitBase } from '@jttc/aws-organizations'
+
+OrganizationUnitBase.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@jttc/aws-organizations.OrganizationUnitBase.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isOwnedResource` <a name="isOwnedResource" id="@jttc/aws-organizations.OrganizationUnitBase.isOwnedResource"></a>
+
+```typescript
+import { OrganizationUnitBase } from '@jttc/aws-organizations'
+
+OrganizationUnitBase.isOwnedResource(construct: IConstruct)
+```
+
+Returns true if the construct was created by CDK, and false otherwise.
+
+###### `construct`<sup>Required</sup> <a name="construct" id="@jttc/aws-organizations.OrganizationUnitBase.isOwnedResource.parameter.construct"></a>
+
+- *Type:* constructs.IConstruct
+
+---
+
+##### `isResource` <a name="isResource" id="@jttc/aws-organizations.OrganizationUnitBase.isResource"></a>
+
+```typescript
+import { OrganizationUnitBase } from '@jttc/aws-organizations'
+
+OrganizationUnitBase.isResource(construct: IConstruct)
+```
+
+Check whether the given construct is a Resource.
+
+###### `construct`<sup>Required</sup> <a name="construct" id="@jttc/aws-organizations.OrganizationUnitBase.isResource.parameter.construct"></a>
+
+- *Type:* constructs.IConstruct
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@jttc/aws-organizations.OrganizationUnitBase.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@jttc/aws-organizations.OrganizationUnitBase.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
+| <code><a href="#@jttc/aws-organizations.OrganizationUnitBase.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
+| <code><a href="#@jttc/aws-organizations.OrganizationUnitBase.property.organizationUnitArn">organizationUnitArn</a></code> | <code>string</code> | The Amazon Resource Name (ARN) of this OU. |
+| <code><a href="#@jttc/aws-organizations.OrganizationUnitBase.property.organizationUnitId">organizationUnitId</a></code> | <code>string</code> | The unique identifier (ID) associated with this OU. |
+| <code><a href="#@jttc/aws-organizations.OrganizationUnitBase.property.organizationUnitName">organizationUnitName</a></code> | <code>string</code> | The name of the OU. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@jttc/aws-organizations.OrganizationUnitBase.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="@jttc/aws-organizations.OrganizationUnitBase.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.ResourceEnvironment
+
+The environment this resource belongs to.
+
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.
+
+---
+
+##### `stack`<sup>Required</sup> <a name="stack" id="@jttc/aws-organizations.OrganizationUnitBase.property.stack"></a>
+
+```typescript
+public readonly stack: Stack;
+```
+
+- *Type:* aws-cdk-lib.Stack
+
+The stack in which this resource is defined.
+
+---
+
+##### `organizationUnitArn`<sup>Required</sup> <a name="organizationUnitArn" id="@jttc/aws-organizations.OrganizationUnitBase.property.organizationUnitArn"></a>
+
+```typescript
+public readonly organizationUnitArn: string;
+```
+
+- *Type:* string
+
+The Amazon Resource Name (ARN) of this OU.
+
+---
+
+##### `organizationUnitId`<sup>Required</sup> <a name="organizationUnitId" id="@jttc/aws-organizations.OrganizationUnitBase.property.organizationUnitId"></a>
+
+```typescript
+public readonly organizationUnitId: string;
+```
+
+- *Type:* string
+
+The unique identifier (ID) associated with this OU.
+
+---
+
+##### `organizationUnitName`<sup>Required</sup> <a name="organizationUnitName" id="@jttc/aws-organizations.OrganizationUnitBase.property.organizationUnitName"></a>
+
+```typescript
+public readonly organizationUnitName: string;
+```
+
+- *Type:* string
+
+The name of the OU.
+
+---
+
+
 ## Structs <a name="Structs" id="Structs"></a>
 
 ### OrganizationAttributes <a name="OrganizationAttributes" id="@jttc/aws-organizations.OrganizationAttributes"></a>
@@ -645,6 +1160,62 @@ public readonly featureSet: OrganizationFeatureSet;
 - *Default:* OrganizationFeatureSet.ALL
 
 Specifies the feature set supported by the new organization.
+
+---
+
+### OrganizationUnitAttributes <a name="OrganizationUnitAttributes" id="@jttc/aws-organizations.OrganizationUnitAttributes"></a>
+
+#### Initializer <a name="Initializer" id="@jttc/aws-organizations.OrganizationUnitAttributes.Initializer"></a>
+
+```typescript
+import { OrganizationUnitAttributes } from '@jttc/aws-organizations'
+
+const organizationUnitAttributes: OrganizationUnitAttributes = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@jttc/aws-organizations.OrganizationUnitAttributes.property.organizationUnitArn">organizationUnitArn</a></code> | <code>string</code> | The Amazon Resource Name (ARN) of this OU. |
+| <code><a href="#@jttc/aws-organizations.OrganizationUnitAttributes.property.organizationUnitId">organizationUnitId</a></code> | <code>string</code> | The unique identifier (ID) associated with this OU. |
+| <code><a href="#@jttc/aws-organizations.OrganizationUnitAttributes.property.organizationUnitName">organizationUnitName</a></code> | <code>string</code> | The name of the OU. |
+
+---
+
+##### `organizationUnitArn`<sup>Required</sup> <a name="organizationUnitArn" id="@jttc/aws-organizations.OrganizationUnitAttributes.property.organizationUnitArn"></a>
+
+```typescript
+public readonly organizationUnitArn: string;
+```
+
+- *Type:* string
+
+The Amazon Resource Name (ARN) of this OU.
+
+---
+
+##### `organizationUnitId`<sup>Required</sup> <a name="organizationUnitId" id="@jttc/aws-organizations.OrganizationUnitAttributes.property.organizationUnitId"></a>
+
+```typescript
+public readonly organizationUnitId: string;
+```
+
+- *Type:* string
+
+The unique identifier (ID) associated with this OU.
+
+---
+
+##### `organizationUnitName`<sup>Required</sup> <a name="organizationUnitName" id="@jttc/aws-organizations.OrganizationUnitAttributes.property.organizationUnitName"></a>
+
+```typescript
+public readonly organizationUnitName: string;
+```
+
+- *Type:* string
+
+The name of the OU.
 
 ---
 
@@ -747,6 +1318,145 @@ public readonly organizationRootId: string;
 - *Type:* string
 
 The unique identifier (ID) of the organization root.
+
+---
+
+### IOrganizationUnitProps <a name="IOrganizationUnitProps" id="@jttc/aws-organizations.IOrganizationUnitProps"></a>
+
+- *Implemented By:* <a href="#@jttc/aws-organizations.IOrganizationUnitProps">IOrganizationUnitProps</a>
+
+Organization Unit Properties.
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@jttc/aws-organizations.IOrganizationUnitProps.property.organizationUnitName">organizationUnitName</a></code> | <code>string</code> | The name of the OU. |
+| <code><a href="#@jttc/aws-organizations.IOrganizationUnitProps.property.parent">parent</a></code> | <code>string \| <a href="#@jttc/aws-organizations.Organization">Organization</a> \| <a href="#@jttc/aws-organizations.OrganizationUnit">OrganizationUnit</a></code> | The unique identifier (ID) of the parent root or OU that you want to create the new OU in. |
+
+---
+
+##### `organizationUnitName`<sup>Required</sup> <a name="organizationUnitName" id="@jttc/aws-organizations.IOrganizationUnitProps.property.organizationUnitName"></a>
+
+```typescript
+public readonly organizationUnitName: string;
+```
+
+- *Type:* string
+
+The name of the OU.
+
+---
+
+##### `parent`<sup>Required</sup> <a name="parent" id="@jttc/aws-organizations.IOrganizationUnitProps.property.parent"></a>
+
+```typescript
+public readonly parent: string | Organization | OrganizationUnit;
+```
+
+- *Type:* string | <a href="#@jttc/aws-organizations.Organization">Organization</a> | <a href="#@jttc/aws-organizations.OrganizationUnit">OrganizationUnit</a>
+
+The unique identifier (ID) of the parent root or OU that you want to create the new OU in.
+
+---
+
+### IOrganizationUnits <a name="IOrganizationUnits" id="@jttc/aws-organizations.IOrganizationUnits"></a>
+
+- *Extends:* aws-cdk-lib.IResource
+
+- *Implemented By:* <a href="#@jttc/aws-organizations.OrganizationUnit">OrganizationUnit</a>, <a href="#@jttc/aws-organizations.OrganizationUnitBase">OrganizationUnitBase</a>, <a href="#@jttc/aws-organizations.IOrganizationUnits">IOrganizationUnits</a>
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@jttc/aws-organizations.IOrganizationUnits.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@jttc/aws-organizations.IOrganizationUnits.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
+| <code><a href="#@jttc/aws-organizations.IOrganizationUnits.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
+| <code><a href="#@jttc/aws-organizations.IOrganizationUnits.property.organizationUnitArn">organizationUnitArn</a></code> | <code>string</code> | The Amazon Resource Name (ARN) of this OU. |
+| <code><a href="#@jttc/aws-organizations.IOrganizationUnits.property.organizationUnitId">organizationUnitId</a></code> | <code>string</code> | The unique identifier (ID) associated with this OU. |
+| <code><a href="#@jttc/aws-organizations.IOrganizationUnits.property.organizationUnitName">organizationUnitName</a></code> | <code>string</code> | The name of the OU. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@jttc/aws-organizations.IOrganizationUnits.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="@jttc/aws-organizations.IOrganizationUnits.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.ResourceEnvironment
+
+The environment this resource belongs to.
+
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.
+
+---
+
+##### `stack`<sup>Required</sup> <a name="stack" id="@jttc/aws-organizations.IOrganizationUnits.property.stack"></a>
+
+```typescript
+public readonly stack: Stack;
+```
+
+- *Type:* aws-cdk-lib.Stack
+
+The stack in which this resource is defined.
+
+---
+
+##### `organizationUnitArn`<sup>Required</sup> <a name="organizationUnitArn" id="@jttc/aws-organizations.IOrganizationUnits.property.organizationUnitArn"></a>
+
+```typescript
+public readonly organizationUnitArn: string;
+```
+
+- *Type:* string
+
+The Amazon Resource Name (ARN) of this OU.
+
+---
+
+##### `organizationUnitId`<sup>Required</sup> <a name="organizationUnitId" id="@jttc/aws-organizations.IOrganizationUnits.property.organizationUnitId"></a>
+
+```typescript
+public readonly organizationUnitId: string;
+```
+
+- *Type:* string
+
+The unique identifier (ID) associated with this OU.
+
+---
+
+##### `organizationUnitName`<sup>Required</sup> <a name="organizationUnitName" id="@jttc/aws-organizations.IOrganizationUnits.property.organizationUnitName"></a>
+
+```typescript
+public readonly organizationUnitName: string;
+```
+
+- *Type:* string
+
+The name of the OU.
 
 ---
 
