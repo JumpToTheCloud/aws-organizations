@@ -20,3 +20,4 @@ This library helps to create AWS Organizations, Accounts and Organizations Units
 | Feature                        | Description                                                                |
 | ------------------------------ | -------------------------------------------------------------------------- |
 | [Organization](./organization.md)              | Construct to create a new organization in AWS                              |
+| [Organization Unit](./organization-unit.md)    | Construct to create organization units                                     |

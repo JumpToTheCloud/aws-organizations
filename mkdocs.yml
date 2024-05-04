@@ -5,6 +5,7 @@ nav:
   - Homepage:
       - index.md
       - Organization: organization.md
+      - Organizational Units: organization-unit.md
 
 theme:
   name: material

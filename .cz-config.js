@@ -24,7 +24,12 @@ module.exports = {
     { value: 'WIP', name: 'WIP:      Work in progress' },
   ],
 
-  scopes: [{ name: 'projen' }, { name: 'docs' }, { name: 'organizations' }],
+  scopes: [
+    { name: 'projen' },
+    { name: 'docs' },
+    { name: 'organizations' },
+    { name: 'organization-unit' },
+  ],
 
   usePreparedCommit: true, // to re-use commit from ./.git/COMMIT_EDITMSG
   allowTicketNumber: false,
