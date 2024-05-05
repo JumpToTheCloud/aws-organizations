@@ -29,6 +29,7 @@ module.exports = {
     { name: 'docs' },
     { name: 'organizations' },
     { name: 'organization-unit' },
+    { name: 'account' },
   ],
 
   usePreparedCommit: true, // to re-use commit from ./.git/COMMIT_EDITMSG
