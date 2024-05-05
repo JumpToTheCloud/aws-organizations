@@ -115,7 +115,7 @@ deployDocs?.addJob('deploy-docs', {
     {
       uses: 'actions/setup-python@v5',
       with: {
-        pythonVersion: '3.8',
+        ['python-version']: '3.10',
       },
     },
     {
