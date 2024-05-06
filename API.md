@@ -2,6 +2,534 @@
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
 
+### Account <a name="Account" id="@jttc/aws-organizations.Account"></a>
+
+Create a new AWS Account.
+
+#### Initializers <a name="Initializers" id="@jttc/aws-organizations.Account.Initializer"></a>
+
+```typescript
+import { Account } from '@jttc/aws-organizations'
+
+new Account(scope: Construct, id: string, props: AccountProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@jttc/aws-organizations.Account.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#@jttc/aws-organizations.Account.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@jttc/aws-organizations.Account.Initializer.parameter.props">props</a></code> | <code><a href="#@jttc/aws-organizations.AccountProps">AccountProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="@jttc/aws-organizations.Account.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="@jttc/aws-organizations.Account.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="@jttc/aws-organizations.Account.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#@jttc/aws-organizations.AccountProps">AccountProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@jttc/aws-organizations.Account.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@jttc/aws-organizations.Account.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
+
+---
+
+##### `toString` <a name="toString" id="@jttc/aws-organizations.Account.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="@jttc/aws-organizations.Account.applyRemovalPolicy"></a>
+
+```typescript
+public applyRemovalPolicy(policy: RemovalPolicy): void
+```
+
+Apply the given removal policy to this resource.
+
+The Removal Policy controls what happens to this resource when it stops
+being managed by CloudFormation, either because you've removed it from the
+CDK application or because you've made a change that requires the resource
+to be replaced.
+
+The resource can be deleted (`RemovalPolicy.DESTROY`), or left in your AWS
+account for data recovery and cleanup later (`RemovalPolicy.RETAIN`).
+
+###### `policy`<sup>Required</sup> <a name="policy" id="@jttc/aws-organizations.Account.applyRemovalPolicy.parameter.policy"></a>
+
+- *Type:* aws-cdk-lib.RemovalPolicy
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@jttc/aws-organizations.Account.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@jttc/aws-organizations.Account.isOwnedResource">isOwnedResource</a></code> | Returns true if the construct was created by CDK, and false otherwise. |
+| <code><a href="#@jttc/aws-organizations.Account.isResource">isResource</a></code> | Check whether the given construct is a Resource. |
+| <code><a href="#@jttc/aws-organizations.Account.fromAccountAttributes">fromAccountAttributes</a></code> | Import a Organization. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@jttc/aws-organizations.Account.isConstruct"></a>
+
+```typescript
+import { Account } from '@jttc/aws-organizations'
+
+Account.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@jttc/aws-organizations.Account.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isOwnedResource` <a name="isOwnedResource" id="@jttc/aws-organizations.Account.isOwnedResource"></a>
+
+```typescript
+import { Account } from '@jttc/aws-organizations'
+
+Account.isOwnedResource(construct: IConstruct)
+```
+
+Returns true if the construct was created by CDK, and false otherwise.
+
+###### `construct`<sup>Required</sup> <a name="construct" id="@jttc/aws-organizations.Account.isOwnedResource.parameter.construct"></a>
+
+- *Type:* constructs.IConstruct
+
+---
+
+##### `isResource` <a name="isResource" id="@jttc/aws-organizations.Account.isResource"></a>
+
+```typescript
+import { Account } from '@jttc/aws-organizations'
+
+Account.isResource(construct: IConstruct)
+```
+
+Check whether the given construct is a Resource.
+
+###### `construct`<sup>Required</sup> <a name="construct" id="@jttc/aws-organizations.Account.isResource.parameter.construct"></a>
+
+- *Type:* constructs.IConstruct
+
+---
+
+##### `fromAccountAttributes` <a name="fromAccountAttributes" id="@jttc/aws-organizations.Account.fromAccountAttributes"></a>
+
+```typescript
+import { Account } from '@jttc/aws-organizations'
+
+Account.fromAccountAttributes(scope: Construct, id: string, attributes: AccountAttributes)
+```
+
+Import a Organization.
+
+*Example*
+
+```typescript
+   Organization.fromOrganizationAttributes(this, 'Organization', {
+     organizationId: 'o-xxxx',
+     organizationRootId: 'r-xxxx',
+     managementAccountId: 'xxxx',
+   });
+```
+
+
+###### `scope`<sup>Required</sup> <a name="scope" id="@jttc/aws-organizations.Account.fromAccountAttributes.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+###### `id`<sup>Required</sup> <a name="id" id="@jttc/aws-organizations.Account.fromAccountAttributes.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+###### `attributes`<sup>Required</sup> <a name="attributes" id="@jttc/aws-organizations.Account.fromAccountAttributes.parameter.attributes"></a>
+
+- *Type:* <a href="#@jttc/aws-organizations.AccountAttributes">AccountAttributes</a>
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@jttc/aws-organizations.Account.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@jttc/aws-organizations.Account.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
+| <code><a href="#@jttc/aws-organizations.Account.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
+| <code><a href="#@jttc/aws-organizations.Account.property.accountArn">accountArn</a></code> | <code>string</code> | The Arn of the created account. |
+| <code><a href="#@jttc/aws-organizations.Account.property.accountId">accountId</a></code> | <code>string</code> | The account id created. |
+| <code><a href="#@jttc/aws-organizations.Account.property.roleName">roleName</a></code> | <code>string</code> | The name of an IAM role that AWS Organizations automatically preconfigures in the new member account. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@jttc/aws-organizations.Account.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="@jttc/aws-organizations.Account.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.ResourceEnvironment
+
+The environment this resource belongs to.
+
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.
+
+---
+
+##### `stack`<sup>Required</sup> <a name="stack" id="@jttc/aws-organizations.Account.property.stack"></a>
+
+```typescript
+public readonly stack: Stack;
+```
+
+- *Type:* aws-cdk-lib.Stack
+
+The stack in which this resource is defined.
+
+---
+
+##### `accountArn`<sup>Required</sup> <a name="accountArn" id="@jttc/aws-organizations.Account.property.accountArn"></a>
+
+```typescript
+public readonly accountArn: string;
+```
+
+- *Type:* string
+
+The Arn of the created account.
+
+---
+
+##### `accountId`<sup>Required</sup> <a name="accountId" id="@jttc/aws-organizations.Account.property.accountId"></a>
+
+```typescript
+public readonly accountId: string;
+```
+
+- *Type:* string
+
+The account id created.
+
+---
+
+##### `roleName`<sup>Required</sup> <a name="roleName" id="@jttc/aws-organizations.Account.property.roleName"></a>
+
+```typescript
+public readonly roleName: string;
+```
+
+- *Type:* string
+
+The name of an IAM role that AWS Organizations automatically preconfigures in the new member account.
+
+---
+
+
+### AccountBase <a name="AccountBase" id="@jttc/aws-organizations.AccountBase"></a>
+
+- *Implements:* <a href="#@jttc/aws-organizations.IAccount">IAccount</a>
+
+#### Initializers <a name="Initializers" id="@jttc/aws-organizations.AccountBase.Initializer"></a>
+
+```typescript
+import { AccountBase } from '@jttc/aws-organizations'
+
+new AccountBase(scope: Construct, id: string, props?: ResourceProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@jttc/aws-organizations.AccountBase.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#@jttc/aws-organizations.AccountBase.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@jttc/aws-organizations.AccountBase.Initializer.parameter.props">props</a></code> | <code>aws-cdk-lib.ResourceProps</code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="@jttc/aws-organizations.AccountBase.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="@jttc/aws-organizations.AccountBase.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Optional</sup> <a name="props" id="@jttc/aws-organizations.AccountBase.Initializer.parameter.props"></a>
+
+- *Type:* aws-cdk-lib.ResourceProps
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@jttc/aws-organizations.AccountBase.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@jttc/aws-organizations.AccountBase.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
+
+---
+
+##### `toString` <a name="toString" id="@jttc/aws-organizations.AccountBase.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="@jttc/aws-organizations.AccountBase.applyRemovalPolicy"></a>
+
+```typescript
+public applyRemovalPolicy(policy: RemovalPolicy): void
+```
+
+Apply the given removal policy to this resource.
+
+The Removal Policy controls what happens to this resource when it stops
+being managed by CloudFormation, either because you've removed it from the
+CDK application or because you've made a change that requires the resource
+to be replaced.
+
+The resource can be deleted (`RemovalPolicy.DESTROY`), or left in your AWS
+account for data recovery and cleanup later (`RemovalPolicy.RETAIN`).
+
+###### `policy`<sup>Required</sup> <a name="policy" id="@jttc/aws-organizations.AccountBase.applyRemovalPolicy.parameter.policy"></a>
+
+- *Type:* aws-cdk-lib.RemovalPolicy
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@jttc/aws-organizations.AccountBase.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@jttc/aws-organizations.AccountBase.isOwnedResource">isOwnedResource</a></code> | Returns true if the construct was created by CDK, and false otherwise. |
+| <code><a href="#@jttc/aws-organizations.AccountBase.isResource">isResource</a></code> | Check whether the given construct is a Resource. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@jttc/aws-organizations.AccountBase.isConstruct"></a>
+
+```typescript
+import { AccountBase } from '@jttc/aws-organizations'
+
+AccountBase.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@jttc/aws-organizations.AccountBase.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isOwnedResource` <a name="isOwnedResource" id="@jttc/aws-organizations.AccountBase.isOwnedResource"></a>
+
+```typescript
+import { AccountBase } from '@jttc/aws-organizations'
+
+AccountBase.isOwnedResource(construct: IConstruct)
+```
+
+Returns true if the construct was created by CDK, and false otherwise.
+
+###### `construct`<sup>Required</sup> <a name="construct" id="@jttc/aws-organizations.AccountBase.isOwnedResource.parameter.construct"></a>
+
+- *Type:* constructs.IConstruct
+
+---
+
+##### `isResource` <a name="isResource" id="@jttc/aws-organizations.AccountBase.isResource"></a>
+
+```typescript
+import { AccountBase } from '@jttc/aws-organizations'
+
+AccountBase.isResource(construct: IConstruct)
+```
+
+Check whether the given construct is a Resource.
+
+###### `construct`<sup>Required</sup> <a name="construct" id="@jttc/aws-organizations.AccountBase.isResource.parameter.construct"></a>
+
+- *Type:* constructs.IConstruct
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@jttc/aws-organizations.AccountBase.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@jttc/aws-organizations.AccountBase.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
+| <code><a href="#@jttc/aws-organizations.AccountBase.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
+| <code><a href="#@jttc/aws-organizations.AccountBase.property.accountArn">accountArn</a></code> | <code>string</code> | The Arn of the created account. |
+| <code><a href="#@jttc/aws-organizations.AccountBase.property.accountId">accountId</a></code> | <code>string</code> | The account id created. |
+| <code><a href="#@jttc/aws-organizations.AccountBase.property.roleName">roleName</a></code> | <code>string</code> | The name of an IAM role that AWS Organizations automatically preconfigures in the new member account. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@jttc/aws-organizations.AccountBase.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="@jttc/aws-organizations.AccountBase.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.ResourceEnvironment
+
+The environment this resource belongs to.
+
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.
+
+---
+
+##### `stack`<sup>Required</sup> <a name="stack" id="@jttc/aws-organizations.AccountBase.property.stack"></a>
+
+```typescript
+public readonly stack: Stack;
+```
+
+- *Type:* aws-cdk-lib.Stack
+
+The stack in which this resource is defined.
+
+---
+
+##### `accountArn`<sup>Required</sup> <a name="accountArn" id="@jttc/aws-organizations.AccountBase.property.accountArn"></a>
+
+```typescript
+public readonly accountArn: string;
+```
+
+- *Type:* string
+
+The Arn of the created account.
+
+---
+
+##### `accountId`<sup>Required</sup> <a name="accountId" id="@jttc/aws-organizations.AccountBase.property.accountId"></a>
+
+```typescript
+public readonly accountId: string;
+```
+
+- *Type:* string
+
+The account id created.
+
+---
+
+##### `roleName`<sup>Required</sup> <a name="roleName" id="@jttc/aws-organizations.AccountBase.property.roleName"></a>
+
+```typescript
+public readonly roleName: string;
+```
+
+- *Type:* string
+
+The name of an IAM role that AWS Organizations automatically preconfigures in the new member account.
+
+---
+
+
 ### Organization <a name="Organization" id="@jttc/aws-organizations.Organization"></a>
 
 Create a new organization.
@@ -1076,6 +1604,161 @@ The name of the OU.
 
 ## Structs <a name="Structs" id="Structs"></a>
 
+### AccountAttributes <a name="AccountAttributes" id="@jttc/aws-organizations.AccountAttributes"></a>
+
+#### Initializer <a name="Initializer" id="@jttc/aws-organizations.AccountAttributes.Initializer"></a>
+
+```typescript
+import { AccountAttributes } from '@jttc/aws-organizations'
+
+const accountAttributes: AccountAttributes = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@jttc/aws-organizations.AccountAttributes.property.accountId">accountId</a></code> | <code>string</code> | The account id created. |
+| <code><a href="#@jttc/aws-organizations.AccountAttributes.property.organizationUnitId">organizationUnitId</a></code> | <code>string</code> | The Organization Unit Id ou-xxxxxx. |
+| <code><a href="#@jttc/aws-organizations.AccountAttributes.property.roleName">roleName</a></code> | <code>string</code> | The name of an IAM role that AWS Organizations automatically preconfigures in the new member account. |
+
+---
+
+##### `accountId`<sup>Required</sup> <a name="accountId" id="@jttc/aws-organizations.AccountAttributes.property.accountId"></a>
+
+```typescript
+public readonly accountId: string;
+```
+
+- *Type:* string
+
+The account id created.
+
+---
+
+##### `organizationUnitId`<sup>Required</sup> <a name="organizationUnitId" id="@jttc/aws-organizations.AccountAttributes.property.organizationUnitId"></a>
+
+```typescript
+public readonly organizationUnitId: string;
+```
+
+- *Type:* string
+
+The Organization Unit Id ou-xxxxxx.
+
+---
+
+##### `roleName`<sup>Optional</sup> <a name="roleName" id="@jttc/aws-organizations.AccountAttributes.property.roleName"></a>
+
+```typescript
+public readonly roleName: string;
+```
+
+- *Type:* string
+
+The name of an IAM role that AWS Organizations automatically preconfigures in the new member account.
+
+---
+
+### AccountProps <a name="AccountProps" id="@jttc/aws-organizations.AccountProps"></a>
+
+#### Initializer <a name="Initializer" id="@jttc/aws-organizations.AccountProps.Initializer"></a>
+
+```typescript
+import { AccountProps } from '@jttc/aws-organizations'
+
+const accountProps: AccountProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@jttc/aws-organizations.AccountProps.property.accountName">accountName</a></code> | <code>string</code> | The account name given to the account when it was created. |
+| <code><a href="#@jttc/aws-organizations.AccountProps.property.email">email</a></code> | <code>string</code> | The email address associated with the AWS account. |
+| <code><a href="#@jttc/aws-organizations.AccountProps.property.parent">parent</a></code> | <code>string \| <a href="#@jttc/aws-organizations.OrganizationUnit">OrganizationUnit</a></code> | The unique identifier (ID) of the root or organizational unit (OU) that you want to create the new account in. |
+| <code><a href="#@jttc/aws-organizations.AccountProps.property.roleName">roleName</a></code> | <code>string</code> | The name of an IAM role that AWS Organizations automatically preconfigures in the new member account. |
+| <code><a href="#@jttc/aws-organizations.AccountProps.property.tags">tags</a></code> | <code>aws-cdk-lib.Tag[]</code> | A list of tags that you want to attach to the newly created account. |
+
+---
+
+##### `accountName`<sup>Required</sup> <a name="accountName" id="@jttc/aws-organizations.AccountProps.property.accountName"></a>
+
+```typescript
+public readonly accountName: string;
+```
+
+- *Type:* string
+
+The account name given to the account when it was created.
+
+---
+
+##### `email`<sup>Required</sup> <a name="email" id="@jttc/aws-organizations.AccountProps.property.email"></a>
+
+```typescript
+public readonly email: string;
+```
+
+- *Type:* string
+
+The email address associated with the AWS account.
+
+---
+
+##### `parent`<sup>Optional</sup> <a name="parent" id="@jttc/aws-organizations.AccountProps.property.parent"></a>
+
+```typescript
+public readonly parent: string | OrganizationUnit;
+```
+
+- *Type:* string | <a href="#@jttc/aws-organizations.OrganizationUnit">OrganizationUnit</a>
+
+The unique identifier (ID) of the root or organizational unit (OU) that you want to create the new account in.
+
+If you don't specify this parameter, the ParentId defaults to the root ID.
+
+---
+
+##### `roleName`<sup>Optional</sup> <a name="roleName" id="@jttc/aws-organizations.AccountProps.property.roleName"></a>
+
+```typescript
+public readonly roleName: string;
+```
+
+- *Type:* string
+
+The name of an IAM role that AWS Organizations automatically preconfigures in the new member account.
+
+This role trusts the management account, allowing users in the management account to assume the role,
+as permitted by the management account administrator.
+
+The role has administrator permissions in the new member account.
+
+If you don't specify this parameter, the role name defaults to OrganizationAccountAccessRole.
+
+For more information about how to use this role to access the member account, see the following links:
+- Creating the OrganizationAccountAccessRole in an invited member account in the AWS Organizations User Guide
+
+> [https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html](https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html)
+
+---
+
+##### `tags`<sup>Optional</sup> <a name="tags" id="@jttc/aws-organizations.AccountProps.property.tags"></a>
+
+```typescript
+public readonly tags: Tag[];
+```
+
+- *Type:* aws-cdk-lib.Tag[]
+
+A list of tags that you want to attach to the newly created account.
+
+For each tag in the list, you must specify both a tag key and a value.
+You can set the value to an empty string, but you can't set it to null
+
+---
+
 ### OrganizationAttributes <a name="OrganizationAttributes" id="@jttc/aws-organizations.OrganizationAttributes"></a>
 
 #### Initializer <a name="Initializer" id="@jttc/aws-organizations.OrganizationAttributes.Initializer"></a>
@@ -1221,6 +1904,105 @@ The name of the OU.
 
 
 ## Protocols <a name="Protocols" id="Protocols"></a>
+
+### IAccount <a name="IAccount" id="@jttc/aws-organizations.IAccount"></a>
+
+- *Extends:* aws-cdk-lib.IResource
+
+- *Implemented By:* <a href="#@jttc/aws-organizations.Account">Account</a>, <a href="#@jttc/aws-organizations.AccountBase">AccountBase</a>, <a href="#@jttc/aws-organizations.IAccount">IAccount</a>
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@jttc/aws-organizations.IAccount.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@jttc/aws-organizations.IAccount.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
+| <code><a href="#@jttc/aws-organizations.IAccount.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
+| <code><a href="#@jttc/aws-organizations.IAccount.property.accountArn">accountArn</a></code> | <code>string</code> | The Arn of the created account. |
+| <code><a href="#@jttc/aws-organizations.IAccount.property.accountId">accountId</a></code> | <code>string</code> | The account id created. |
+| <code><a href="#@jttc/aws-organizations.IAccount.property.roleName">roleName</a></code> | <code>string</code> | The name of an IAM role that AWS Organizations automatically preconfigures in the new member account. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@jttc/aws-organizations.IAccount.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="@jttc/aws-organizations.IAccount.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.ResourceEnvironment
+
+The environment this resource belongs to.
+
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.
+
+---
+
+##### `stack`<sup>Required</sup> <a name="stack" id="@jttc/aws-organizations.IAccount.property.stack"></a>
+
+```typescript
+public readonly stack: Stack;
+```
+
+- *Type:* aws-cdk-lib.Stack
+
+The stack in which this resource is defined.
+
+---
+
+##### `accountArn`<sup>Required</sup> <a name="accountArn" id="@jttc/aws-organizations.IAccount.property.accountArn"></a>
+
+```typescript
+public readonly accountArn: string;
+```
+
+- *Type:* string
+
+The Arn of the created account.
+
+---
+
+##### `accountId`<sup>Required</sup> <a name="accountId" id="@jttc/aws-organizations.IAccount.property.accountId"></a>
+
+```typescript
+public readonly accountId: string;
+```
+
+- *Type:* string
+
+The account id created.
+
+---
+
+##### `roleName`<sup>Required</sup> <a name="roleName" id="@jttc/aws-organizations.IAccount.property.roleName"></a>
+
+```typescript
+public readonly roleName: string;
+```
+
+- *Type:* string
+
+The name of an IAM role that AWS Organizations automatically preconfigures in the new member account.
+
+---
 
 ### IOrganization <a name="IOrganization" id="@jttc/aws-organizations.IOrganization"></a>
 
