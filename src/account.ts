@@ -1,11 +1,4 @@
-import {
-  Arn,
-  IResource,
-  RemovalPolicy,
-  Resource,
-  Stack,
-  Tag,
-} from 'aws-cdk-lib';
+import { IResource, RemovalPolicy, Resource, Stack, Tag } from 'aws-cdk-lib';
 import { CfnAccount } from 'aws-cdk-lib/aws-organizations';
 import { Construct } from 'constructs';
 import { OrganizationUnit } from './organization-unit';
@@ -117,14 +110,7 @@ export class Account extends AccountBase {
     class Import extends AccountBase {
       public accountId = attributes.accountId;
 
-      public accountArn = Arn.format({
-        partition: 'aws',
-        region: Stack.of(this).region,
-        service: 'organizations',
-        account: Stack.of(this).account,
-        resource: attributes.organizationUnitId,
-        resourceName: attributes.accountId,
-      });
+      public accountArn = `arn:aws:organizations::${Stack.of(this).account}:account/${attributes.organizationUnitId}/${attributes.accountId}`;
 
       public roleName = attributes.roleName || 'OrganizationAccountAccessRole';
     }

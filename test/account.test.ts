@@ -113,7 +113,7 @@ describe('AWS Organizations', () => {
     expect(account.accountId).toBe(accountAttributes.accountId);
     expect(account.roleName).toBe('OrganizationAccountAccessRole');
     expect(account.accountArn).toBe(
-      `arn:aws:organizations:eu-west-1:123456789012:${accountAttributes.organizationUnitId}/${accountAttributes.accountId}`
+      `arn:aws:organizations::123456789012:account/${accountAttributes.organizationUnitId}/${accountAttributes.accountId}`
     );
   });
 });
