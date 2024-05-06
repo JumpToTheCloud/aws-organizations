@@ -1,4 +1,11 @@
-import { Arn, IResource, Resource, Stack, Tag } from 'aws-cdk-lib';
+import {
+  Arn,
+  IResource,
+  RemovalPolicy,
+  Resource,
+  Stack,
+  Tag,
+} from 'aws-cdk-lib';
 import { CfnAccount } from 'aws-cdk-lib/aws-organizations';
 import { Construct } from 'constructs';
 import { OrganizationUnit } from './organization-unit';
@@ -164,6 +171,8 @@ export class Account extends AccountBase {
       roleName: props.roleName || undefined,
       tags: props.tags || undefined,
     });
+
+    this.resource.applyRemovalPolicy(RemovalPolicy.RETAIN);
 
     this.accountId = this.resource.attrAccountId;
     this.accountArn = this.resource.attrArn;
