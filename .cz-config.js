@@ -30,6 +30,7 @@ module.exports = {
     { name: 'organizations' },
     { name: 'organization-unit' },
     { name: 'account' },
+    { name: 'scp' },
   ],
 
   usePreparedCommit: true, // to re-use commit from ./.git/COMMIT_EDITMSG
