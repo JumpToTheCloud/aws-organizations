@@ -57,7 +57,7 @@ export interface IOrganizationPolicy extends IResource {
   /**
    * List of unique identifiers (IDs) of the root, OU, or account that you want to attach the policy to.
    */
-  readonly targetIds?: string[];
+  readonly targetIds: string[];
 }
 
 export abstract class OrganzationPolicyBase
@@ -107,6 +107,21 @@ export interface ServiceControlPolicyProps {
 /**
  * Creates a policy of a specified type that you can attach to a root,
  * an organizational unit (OU), or an individual AWS account
+ *
+ * @example
+ * import { ServiceControlPolicy } from '@jttc/aws-organizations';
+ *
+ * const serviceControlPolicy = new ServiceControlPolicy(this, 'ServiceControlPolicy', {
+ *   name: 'ServiceControlPolicy',
+ *   description: 'Service Control Policy',
+ *   statements: [
+ *     new PolicyStatement({
+ *       actions: ['s3:*'],
+ *       resources: ['*'],
+ *     }),
+ *   ],
+ *   targetIds: ['o-12345678'],
+ * });
  */
 export class ServiceControlPolicy extends OrganzationPolicyBase {
   public readonly organizationPolicyId: string;

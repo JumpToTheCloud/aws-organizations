@@ -1091,6 +1091,16 @@ The unique identifier (ID) of the organization root.
 
 Create a new Organization Unit.
 
+*Example*
+
+```typescript
+new OrganizationUnit(this, 'OU', {
+  organizationUnitName: 'OU',
+  parent: 'r-123456789',
+});
+```
+
+
 #### Initializers <a name="Initializers" id="@jttc/aws-organizations.OrganizationUnit.Initializer"></a>
 
 ```typescript
@@ -1602,6 +1612,531 @@ The name of the OU.
 ---
 
 
+### OrganzationPolicyBase <a name="OrganzationPolicyBase" id="@jttc/aws-organizations.OrganzationPolicyBase"></a>
+
+- *Implements:* <a href="#@jttc/aws-organizations.IOrganizationPolicy">IOrganizationPolicy</a>
+
+#### Initializers <a name="Initializers" id="@jttc/aws-organizations.OrganzationPolicyBase.Initializer"></a>
+
+```typescript
+import { OrganzationPolicyBase } from '@jttc/aws-organizations'
+
+new OrganzationPolicyBase(scope: Construct, id: string, props?: ResourceProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@jttc/aws-organizations.OrganzationPolicyBase.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#@jttc/aws-organizations.OrganzationPolicyBase.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@jttc/aws-organizations.OrganzationPolicyBase.Initializer.parameter.props">props</a></code> | <code>aws-cdk-lib.ResourceProps</code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="@jttc/aws-organizations.OrganzationPolicyBase.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="@jttc/aws-organizations.OrganzationPolicyBase.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Optional</sup> <a name="props" id="@jttc/aws-organizations.OrganzationPolicyBase.Initializer.parameter.props"></a>
+
+- *Type:* aws-cdk-lib.ResourceProps
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@jttc/aws-organizations.OrganzationPolicyBase.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@jttc/aws-organizations.OrganzationPolicyBase.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
+
+---
+
+##### `toString` <a name="toString" id="@jttc/aws-organizations.OrganzationPolicyBase.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="@jttc/aws-organizations.OrganzationPolicyBase.applyRemovalPolicy"></a>
+
+```typescript
+public applyRemovalPolicy(policy: RemovalPolicy): void
+```
+
+Apply the given removal policy to this resource.
+
+The Removal Policy controls what happens to this resource when it stops
+being managed by CloudFormation, either because you've removed it from the
+CDK application or because you've made a change that requires the resource
+to be replaced.
+
+The resource can be deleted (`RemovalPolicy.DESTROY`), or left in your AWS
+account for data recovery and cleanup later (`RemovalPolicy.RETAIN`).
+
+###### `policy`<sup>Required</sup> <a name="policy" id="@jttc/aws-organizations.OrganzationPolicyBase.applyRemovalPolicy.parameter.policy"></a>
+
+- *Type:* aws-cdk-lib.RemovalPolicy
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@jttc/aws-organizations.OrganzationPolicyBase.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@jttc/aws-organizations.OrganzationPolicyBase.isOwnedResource">isOwnedResource</a></code> | Returns true if the construct was created by CDK, and false otherwise. |
+| <code><a href="#@jttc/aws-organizations.OrganzationPolicyBase.isResource">isResource</a></code> | Check whether the given construct is a Resource. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@jttc/aws-organizations.OrganzationPolicyBase.isConstruct"></a>
+
+```typescript
+import { OrganzationPolicyBase } from '@jttc/aws-organizations'
+
+OrganzationPolicyBase.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@jttc/aws-organizations.OrganzationPolicyBase.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isOwnedResource` <a name="isOwnedResource" id="@jttc/aws-organizations.OrganzationPolicyBase.isOwnedResource"></a>
+
+```typescript
+import { OrganzationPolicyBase } from '@jttc/aws-organizations'
+
+OrganzationPolicyBase.isOwnedResource(construct: IConstruct)
+```
+
+Returns true if the construct was created by CDK, and false otherwise.
+
+###### `construct`<sup>Required</sup> <a name="construct" id="@jttc/aws-organizations.OrganzationPolicyBase.isOwnedResource.parameter.construct"></a>
+
+- *Type:* constructs.IConstruct
+
+---
+
+##### `isResource` <a name="isResource" id="@jttc/aws-organizations.OrganzationPolicyBase.isResource"></a>
+
+```typescript
+import { OrganzationPolicyBase } from '@jttc/aws-organizations'
+
+OrganzationPolicyBase.isResource(construct: IConstruct)
+```
+
+Check whether the given construct is a Resource.
+
+###### `construct`<sup>Required</sup> <a name="construct" id="@jttc/aws-organizations.OrganzationPolicyBase.isResource.parameter.construct"></a>
+
+- *Type:* constructs.IConstruct
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@jttc/aws-organizations.OrganzationPolicyBase.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@jttc/aws-organizations.OrganzationPolicyBase.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
+| <code><a href="#@jttc/aws-organizations.OrganzationPolicyBase.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
+| <code><a href="#@jttc/aws-organizations.OrganzationPolicyBase.property.organizationPolicyArn">organizationPolicyArn</a></code> | <code>string</code> | Returns the Amazon Resource Name (ARN) of the policy. |
+| <code><a href="#@jttc/aws-organizations.OrganzationPolicyBase.property.organizationPolicyId">organizationPolicyId</a></code> | <code>string</code> | Returns the unique identifier (ID) of the policy. |
+| <code><a href="#@jttc/aws-organizations.OrganzationPolicyBase.property.targetIds">targetIds</a></code> | <code>string[]</code> | List of unique identifiers (IDs) of the root, OU, or account that you want to attach the policy to. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@jttc/aws-organizations.OrganzationPolicyBase.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="@jttc/aws-organizations.OrganzationPolicyBase.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.ResourceEnvironment
+
+The environment this resource belongs to.
+
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.
+
+---
+
+##### `stack`<sup>Required</sup> <a name="stack" id="@jttc/aws-organizations.OrganzationPolicyBase.property.stack"></a>
+
+```typescript
+public readonly stack: Stack;
+```
+
+- *Type:* aws-cdk-lib.Stack
+
+The stack in which this resource is defined.
+
+---
+
+##### `organizationPolicyArn`<sup>Required</sup> <a name="organizationPolicyArn" id="@jttc/aws-organizations.OrganzationPolicyBase.property.organizationPolicyArn"></a>
+
+```typescript
+public readonly organizationPolicyArn: string;
+```
+
+- *Type:* string
+
+Returns the Amazon Resource Name (ARN) of the policy.
+
+---
+
+##### `organizationPolicyId`<sup>Required</sup> <a name="organizationPolicyId" id="@jttc/aws-organizations.OrganzationPolicyBase.property.organizationPolicyId"></a>
+
+```typescript
+public readonly organizationPolicyId: string;
+```
+
+- *Type:* string
+
+Returns the unique identifier (ID) of the policy.
+
+---
+
+##### `targetIds`<sup>Required</sup> <a name="targetIds" id="@jttc/aws-organizations.OrganzationPolicyBase.property.targetIds"></a>
+
+```typescript
+public readonly targetIds: string[];
+```
+
+- *Type:* string[]
+
+List of unique identifiers (IDs) of the root, OU, or account that you want to attach the policy to.
+
+---
+
+
+### ServiceControlPolicy <a name="ServiceControlPolicy" id="@jttc/aws-organizations.ServiceControlPolicy"></a>
+
+Creates a policy of a specified type that you can attach to a root, an organizational unit (OU), or an individual AWS account.
+
+*Example*
+
+```typescript
+import { ServiceControlPolicy } from '@jttc/aws-organizations';
+
+const serviceControlPolicy = new ServiceControlPolicy(this, 'ServiceControlPolicy', {
+  name: 'ServiceControlPolicy',
+  description: 'Service Control Policy',
+  statements: [
+    new PolicyStatement({
+      actions: ['s3:*'],
+      resources: ['*'],
+    }),
+  ],
+  targetIds: ['o-12345678'],
+});
+```
+
+
+#### Initializers <a name="Initializers" id="@jttc/aws-organizations.ServiceControlPolicy.Initializer"></a>
+
+```typescript
+import { ServiceControlPolicy } from '@jttc/aws-organizations'
+
+new ServiceControlPolicy(scope: Construct, id: string, props: ServiceControlPolicyProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@jttc/aws-organizations.ServiceControlPolicy.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#@jttc/aws-organizations.ServiceControlPolicy.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@jttc/aws-organizations.ServiceControlPolicy.Initializer.parameter.props">props</a></code> | <code><a href="#@jttc/aws-organizations.ServiceControlPolicyProps">ServiceControlPolicyProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="@jttc/aws-organizations.ServiceControlPolicy.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="@jttc/aws-organizations.ServiceControlPolicy.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="@jttc/aws-organizations.ServiceControlPolicy.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#@jttc/aws-organizations.ServiceControlPolicyProps">ServiceControlPolicyProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@jttc/aws-organizations.ServiceControlPolicy.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@jttc/aws-organizations.ServiceControlPolicy.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
+| <code><a href="#@jttc/aws-organizations.ServiceControlPolicy.addTarget">addTarget</a></code> | Add a target which will be applied this Policy. |
+
+---
+
+##### `toString` <a name="toString" id="@jttc/aws-organizations.ServiceControlPolicy.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="@jttc/aws-organizations.ServiceControlPolicy.applyRemovalPolicy"></a>
+
+```typescript
+public applyRemovalPolicy(policy: RemovalPolicy): void
+```
+
+Apply the given removal policy to this resource.
+
+The Removal Policy controls what happens to this resource when it stops
+being managed by CloudFormation, either because you've removed it from the
+CDK application or because you've made a change that requires the resource
+to be replaced.
+
+The resource can be deleted (`RemovalPolicy.DESTROY`), or left in your AWS
+account for data recovery and cleanup later (`RemovalPolicy.RETAIN`).
+
+###### `policy`<sup>Required</sup> <a name="policy" id="@jttc/aws-organizations.ServiceControlPolicy.applyRemovalPolicy.parameter.policy"></a>
+
+- *Type:* aws-cdk-lib.RemovalPolicy
+
+---
+
+##### `addTarget` <a name="addTarget" id="@jttc/aws-organizations.ServiceControlPolicy.addTarget"></a>
+
+```typescript
+public addTarget(target: string): void
+```
+
+Add a target which will be applied this Policy.
+
+It must be a unique identifiers (IDs) of the root, OU,
+or account that you want to attach the policy to.
+
+###### `target`<sup>Required</sup> <a name="target" id="@jttc/aws-organizations.ServiceControlPolicy.addTarget.parameter.target"></a>
+
+- *Type:* string
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@jttc/aws-organizations.ServiceControlPolicy.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@jttc/aws-organizations.ServiceControlPolicy.isOwnedResource">isOwnedResource</a></code> | Returns true if the construct was created by CDK, and false otherwise. |
+| <code><a href="#@jttc/aws-organizations.ServiceControlPolicy.isResource">isResource</a></code> | Check whether the given construct is a Resource. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@jttc/aws-organizations.ServiceControlPolicy.isConstruct"></a>
+
+```typescript
+import { ServiceControlPolicy } from '@jttc/aws-organizations'
+
+ServiceControlPolicy.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@jttc/aws-organizations.ServiceControlPolicy.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isOwnedResource` <a name="isOwnedResource" id="@jttc/aws-organizations.ServiceControlPolicy.isOwnedResource"></a>
+
+```typescript
+import { ServiceControlPolicy } from '@jttc/aws-organizations'
+
+ServiceControlPolicy.isOwnedResource(construct: IConstruct)
+```
+
+Returns true if the construct was created by CDK, and false otherwise.
+
+###### `construct`<sup>Required</sup> <a name="construct" id="@jttc/aws-organizations.ServiceControlPolicy.isOwnedResource.parameter.construct"></a>
+
+- *Type:* constructs.IConstruct
+
+---
+
+##### `isResource` <a name="isResource" id="@jttc/aws-organizations.ServiceControlPolicy.isResource"></a>
+
+```typescript
+import { ServiceControlPolicy } from '@jttc/aws-organizations'
+
+ServiceControlPolicy.isResource(construct: IConstruct)
+```
+
+Check whether the given construct is a Resource.
+
+###### `construct`<sup>Required</sup> <a name="construct" id="@jttc/aws-organizations.ServiceControlPolicy.isResource.parameter.construct"></a>
+
+- *Type:* constructs.IConstruct
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@jttc/aws-organizations.ServiceControlPolicy.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@jttc/aws-organizations.ServiceControlPolicy.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
+| <code><a href="#@jttc/aws-organizations.ServiceControlPolicy.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
+| <code><a href="#@jttc/aws-organizations.ServiceControlPolicy.property.organizationPolicyArn">organizationPolicyArn</a></code> | <code>string</code> | Returns the Amazon Resource Name (ARN) of the policy. |
+| <code><a href="#@jttc/aws-organizations.ServiceControlPolicy.property.organizationPolicyId">organizationPolicyId</a></code> | <code>string</code> | Returns the unique identifier (ID) of the policy. |
+| <code><a href="#@jttc/aws-organizations.ServiceControlPolicy.property.targetIds">targetIds</a></code> | <code>string[]</code> | List of unique identifiers (IDs) of the root, OU, or account that you want to attach the policy to. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@jttc/aws-organizations.ServiceControlPolicy.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="@jttc/aws-organizations.ServiceControlPolicy.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.ResourceEnvironment
+
+The environment this resource belongs to.
+
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.
+
+---
+
+##### `stack`<sup>Required</sup> <a name="stack" id="@jttc/aws-organizations.ServiceControlPolicy.property.stack"></a>
+
+```typescript
+public readonly stack: Stack;
+```
+
+- *Type:* aws-cdk-lib.Stack
+
+The stack in which this resource is defined.
+
+---
+
+##### `organizationPolicyArn`<sup>Required</sup> <a name="organizationPolicyArn" id="@jttc/aws-organizations.ServiceControlPolicy.property.organizationPolicyArn"></a>
+
+```typescript
+public readonly organizationPolicyArn: string;
+```
+
+- *Type:* string
+
+Returns the Amazon Resource Name (ARN) of the policy.
+
+---
+
+##### `organizationPolicyId`<sup>Required</sup> <a name="organizationPolicyId" id="@jttc/aws-organizations.ServiceControlPolicy.property.organizationPolicyId"></a>
+
+```typescript
+public readonly organizationPolicyId: string;
+```
+
+- *Type:* string
+
+Returns the unique identifier (ID) of the policy.
+
+---
+
+##### `targetIds`<sup>Required</sup> <a name="targetIds" id="@jttc/aws-organizations.ServiceControlPolicy.property.targetIds"></a>
+
+```typescript
+public readonly targetIds: string[];
+```
+
+- *Type:* string[]
+
+List of unique identifiers (IDs) of the root, OU, or account that you want to attach the policy to.
+
+---
+
+
 ## Structs <a name="Structs" id="Structs"></a>
 
 ### AccountAttributes <a name="AccountAttributes" id="@jttc/aws-organizations.AccountAttributes"></a>
@@ -1902,6 +2437,102 @@ The name of the OU.
 
 ---
 
+### ServiceControlPolicyProps <a name="ServiceControlPolicyProps" id="@jttc/aws-organizations.ServiceControlPolicyProps"></a>
+
+#### Initializer <a name="Initializer" id="@jttc/aws-organizations.ServiceControlPolicyProps.Initializer"></a>
+
+```typescript
+import { ServiceControlPolicyProps } from '@jttc/aws-organizations'
+
+const serviceControlPolicyProps: ServiceControlPolicyProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@jttc/aws-organizations.ServiceControlPolicyProps.property.description">description</a></code> | <code>string</code> | The description of the policy. |
+| <code><a href="#@jttc/aws-organizations.ServiceControlPolicyProps.property.name">name</a></code> | <code>string</code> | The name of the policy. |
+| <code><a href="#@jttc/aws-organizations.ServiceControlPolicyProps.property.statements">statements</a></code> | <code>aws-cdk-lib.aws_iam.PolicyStatement[]</code> | Represents a statement in an IAM policy document. |
+| <code><a href="#@jttc/aws-organizations.ServiceControlPolicyProps.property.removalPolicy">removalPolicy</a></code> | <code>aws-cdk-lib.RemovalPolicy</code> | The policy to apply when the policy is removed from the organization. |
+| <code><a href="#@jttc/aws-organizations.ServiceControlPolicyProps.property.tags">tags</a></code> | <code>aws-cdk-lib.CfnTag[]</code> | A list of tags that you want to attach to the newly created policy. |
+| <code><a href="#@jttc/aws-organizations.ServiceControlPolicyProps.property.targetIds">targetIds</a></code> | <code>string[]</code> | List of unique identifiers (IDs) of the root, OU, or account that you want to attach the policy to. |
+
+---
+
+##### `description`<sup>Required</sup> <a name="description" id="@jttc/aws-organizations.ServiceControlPolicyProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+The description of the policy.
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="@jttc/aws-organizations.ServiceControlPolicyProps.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+The name of the policy.
+
+---
+
+##### `statements`<sup>Required</sup> <a name="statements" id="@jttc/aws-organizations.ServiceControlPolicyProps.property.statements"></a>
+
+```typescript
+public readonly statements: PolicyStatement[];
+```
+
+- *Type:* aws-cdk-lib.aws_iam.PolicyStatement[]
+
+Represents a statement in an IAM policy document.
+
+---
+
+##### `removalPolicy`<sup>Optional</sup> <a name="removalPolicy" id="@jttc/aws-organizations.ServiceControlPolicyProps.property.removalPolicy"></a>
+
+```typescript
+public readonly removalPolicy: RemovalPolicy;
+```
+
+- *Type:* aws-cdk-lib.RemovalPolicy
+- *Default:* RemovalPolicy.RETAIN
+
+The policy to apply when the policy is removed from the organization.
+
+---
+
+##### `tags`<sup>Optional</sup> <a name="tags" id="@jttc/aws-organizations.ServiceControlPolicyProps.property.tags"></a>
+
+```typescript
+public readonly tags: CfnTag[];
+```
+
+- *Type:* aws-cdk-lib.CfnTag[]
+
+A list of tags that you want to attach to the newly created policy.
+
+---
+
+##### `targetIds`<sup>Optional</sup> <a name="targetIds" id="@jttc/aws-organizations.ServiceControlPolicyProps.property.targetIds"></a>
+
+```typescript
+public readonly targetIds: string[];
+```
+
+- *Type:* string[]
+
+List of unique identifiers (IDs) of the root, OU, or account that you want to attach the policy to.
+
+---
+
 
 ## Protocols <a name="Protocols" id="Protocols"></a>
 
@@ -2103,6 +2734,105 @@ The unique identifier (ID) of the organization root.
 
 ---
 
+### IOrganizationPolicy <a name="IOrganizationPolicy" id="@jttc/aws-organizations.IOrganizationPolicy"></a>
+
+- *Extends:* aws-cdk-lib.IResource
+
+- *Implemented By:* <a href="#@jttc/aws-organizations.OrganzationPolicyBase">OrganzationPolicyBase</a>, <a href="#@jttc/aws-organizations.ServiceControlPolicy">ServiceControlPolicy</a>, <a href="#@jttc/aws-organizations.IOrganizationPolicy">IOrganizationPolicy</a>
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@jttc/aws-organizations.IOrganizationPolicy.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@jttc/aws-organizations.IOrganizationPolicy.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
+| <code><a href="#@jttc/aws-organizations.IOrganizationPolicy.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
+| <code><a href="#@jttc/aws-organizations.IOrganizationPolicy.property.organizationPolicyArn">organizationPolicyArn</a></code> | <code>string</code> | Returns the Amazon Resource Name (ARN) of the policy. |
+| <code><a href="#@jttc/aws-organizations.IOrganizationPolicy.property.organizationPolicyId">organizationPolicyId</a></code> | <code>string</code> | Returns the unique identifier (ID) of the policy. |
+| <code><a href="#@jttc/aws-organizations.IOrganizationPolicy.property.targetIds">targetIds</a></code> | <code>string[]</code> | List of unique identifiers (IDs) of the root, OU, or account that you want to attach the policy to. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@jttc/aws-organizations.IOrganizationPolicy.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="@jttc/aws-organizations.IOrganizationPolicy.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.ResourceEnvironment
+
+The environment this resource belongs to.
+
+For resources that are created and managed by the CDK
+(generally, those created by creating new class instances like Role, Bucket, etc.),
+this is always the same as the environment of the stack they belong to;
+however, for imported resources
+(those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+that might be different than the stack they were imported into.
+
+---
+
+##### `stack`<sup>Required</sup> <a name="stack" id="@jttc/aws-organizations.IOrganizationPolicy.property.stack"></a>
+
+```typescript
+public readonly stack: Stack;
+```
+
+- *Type:* aws-cdk-lib.Stack
+
+The stack in which this resource is defined.
+
+---
+
+##### `organizationPolicyArn`<sup>Required</sup> <a name="organizationPolicyArn" id="@jttc/aws-organizations.IOrganizationPolicy.property.organizationPolicyArn"></a>
+
+```typescript
+public readonly organizationPolicyArn: string;
+```
+
+- *Type:* string
+
+Returns the Amazon Resource Name (ARN) of the policy.
+
+---
+
+##### `organizationPolicyId`<sup>Required</sup> <a name="organizationPolicyId" id="@jttc/aws-organizations.IOrganizationPolicy.property.organizationPolicyId"></a>
+
+```typescript
+public readonly organizationPolicyId: string;
+```
+
+- *Type:* string
+
+Returns the unique identifier (ID) of the policy.
+
+---
+
+##### `targetIds`<sup>Required</sup> <a name="targetIds" id="@jttc/aws-organizations.IOrganizationPolicy.property.targetIds"></a>
+
+```typescript
+public readonly targetIds: string[];
+```
+
+- *Type:* string[]
+
+List of unique identifiers (IDs) of the root, OU, or account that you want to attach the policy to.
+
+---
+
 ### IOrganizationUnitProps <a name="IOrganizationUnitProps" id="@jttc/aws-organizations.IOrganizationUnitProps"></a>
 
 - *Implemented By:* <a href="#@jttc/aws-organizations.IOrganizationUnitProps">IOrganizationUnitProps</a>
@@ -2272,6 +3002,64 @@ with all features enabled and service control policies automatically enabled in 
 ##### `CONSOLIDATED_BILLING` <a name="CONSOLIDATED_BILLING" id="@jttc/aws-organizations.OrganizationFeatureSet.CONSOLIDATED_BILLING"></a>
 
 All member accounts have their bills consolidated to and paid by the management account.
+
+---
+
+
+### OrganizationPolicyType <a name="OrganizationPolicyType" id="@jttc/aws-organizations.OrganizationPolicyType"></a>
+
+The type of policy to create.
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@jttc/aws-organizations.OrganizationPolicyType.SERVICE_CONTROL_POLICY">SERVICE_CONTROL_POLICY</a></code> | Service control policies (SCPs) enable central administration over the maximum permissions that identities (users and roles) within accounts in your organization can have. |
+| <code><a href="#@jttc/aws-organizations.OrganizationPolicyType.BACKUP_POLICY">BACKUP_POLICY</a></code> | Backup policies enable you to deploy organization-wide backup plans to help ensure compliance across your organization's accounts. |
+| <code><a href="#@jttc/aws-organizations.OrganizationPolicyType.TAG_POLICY">TAG_POLICY</a></code> | Tag policies help you standardize tags on all tagged resources across your organization. |
+| <code><a href="#@jttc/aws-organizations.OrganizationPolicyType.AISERVICES_OPT_OUT_POLICY">AISERVICES_OPT_OUT_POLICY</a></code> | Artificial Intelligence (AI) services opt-out policies enable you to control whether AWS AI services can store and use your content. |
+
+---
+
+##### `SERVICE_CONTROL_POLICY` <a name="SERVICE_CONTROL_POLICY" id="@jttc/aws-organizations.OrganizationPolicyType.SERVICE_CONTROL_POLICY"></a>
+
+Service control policies (SCPs) enable central administration over the maximum permissions that identities (users and roles) within accounts in your organization can have.
+
+This helps ensure that your identities stay within your organization’s access control guidelines
+
+> [https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html?icmpid=docs_orgs_console](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html?icmpid=docs_orgs_console)
+
+---
+
+
+##### `BACKUP_POLICY` <a name="BACKUP_POLICY" id="@jttc/aws-organizations.OrganizationPolicyType.BACKUP_POLICY"></a>
+
+Backup policies enable you to deploy organization-wide backup plans to help ensure compliance across your organization's accounts.
+
+Using policies helps ensure consistency in how you implement your backup plans.
+
+> [https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html?icmpid=docs_orgs_console](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html?icmpid=docs_orgs_console)
+
+---
+
+
+##### `TAG_POLICY` <a name="TAG_POLICY" id="@jttc/aws-organizations.OrganizationPolicyType.TAG_POLICY"></a>
+
+Tag policies help you standardize tags on all tagged resources across your organization.
+
+You can use tag policies to define tag keys (including how they should be capitalized)
+and their allowed values
+
+> [https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html)
+
+---
+
+
+##### `AISERVICES_OPT_OUT_POLICY` <a name="AISERVICES_OPT_OUT_POLICY" id="@jttc/aws-organizations.OrganizationPolicyType.AISERVICES_OPT_OUT_POLICY"></a>
+
+Artificial Intelligence (AI) services opt-out policies enable you to control whether AWS AI services can store and use your content.
+
+> [https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html?icmpid=docs_orgs_console](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html?icmpid=docs_orgs_console)
 
 ---
 

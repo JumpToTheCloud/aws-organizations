@@ -66,6 +66,12 @@ export interface IOrganizationUnitProps {
 
 /**
  * Create a new Organization Unit
+ *
+ * @example
+ * new OrganizationUnit(this, 'OU', {
+ *   organizationUnitName: 'OU',
+ *   parent: 'r-123456789',
+ * });
  */
 export class OrganizationUnit extends OrganizationUnitBase {
   public static fromOrganizationUnitAttributes(

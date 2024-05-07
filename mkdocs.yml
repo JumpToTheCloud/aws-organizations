@@ -7,6 +7,7 @@ nav:
       - Organization: organization.md
       - Organizational Units: organization-unit.md
       - Accounts: account.md
+      - Policies: policy.md
 
 theme:
   name: material
