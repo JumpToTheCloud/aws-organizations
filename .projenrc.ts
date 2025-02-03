@@ -1,14 +1,19 @@
-import { ReleasableCommits, awscdk } from 'projen';
-import { JobPermission } from 'projen/lib/github/workflows-model';
+import { ReleasableCommits, TextFile, awscdk } from 'projen';
+import { GithubCredentials } from 'projen/lib/github';
+import {
+  AppPermission,
+  JobPermission,
+} from 'projen/lib/github/workflows-model';
 import { TrailingComma } from 'projen/lib/javascript';
+import { VsCode } from 'projen/lib/vscode';
 
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'Jump to the Cloud',
   authorAddress: 'antonio.marquez@jumptothecloud.tech',
-  cdkVersion: '2.120.0',
-  constructsVersion: '10.3.0',
+  cdkVersion: '2.173.0',
+  constructsVersion: '10.4.2',
   defaultReleaseBranch: 'main',
-  jsiiVersion: '~5.3.0',
+  jsiiVersion: '~5.7.0',
   name: '@jttc/aws-organizations',
   projenrcTs: true,
   repositoryUrl: 'git@github.com:JumpToTheCloud/caws-organizations.git',
@@ -30,6 +35,12 @@ const project = new awscdk.AwsCdkConstructLibrary({
     },
   },
   githubOptions: {
+    projenCredentials: GithubCredentials.fromApp({
+      permissions: {
+        pullRequests: AppPermission.WRITE,
+        contents: AppPermission.WRITE,
+      },
+    }),
     pullRequestLintOptions: {
       semanticTitleOptions: {
         types: [
@@ -51,11 +62,19 @@ const project = new awscdk.AwsCdkConstructLibrary({
   // deps: [],                /* Runtime dependencies of this module. */
   // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
   devDeps: ['commitizen', 'cz-customizable'],
-  // packageName: undefined,  /* The "name" in package.json. */
+  packageName: '@jttc/aws-organizations',
 });
 
-project.addScripts({
-  commit: './node_modules/cz-customizable/standalone.js',
+project.addTask('commit', {
+  description:
+    'Commit changes with conventional commits prompts provided by Commitizen',
+  steps: [
+    {
+      exec: './node_modules/cz-customizable/standalone.js',
+      receiveArgs: false,
+      say: 'committing changes',
+    },
+  ],
 });
 
 project.addGitIgnore('site');
@@ -165,6 +184,17 @@ deployDocs?.addJob('deploy-docs', {
       ].join('\n'),
     },
   ],
+});
+
+new TextFile(project, '.nvmrc', {
+  lines: ['v20.18.2'],
+});
+
+const vscode = new VsCode(project);
+vscode.settings.addSettings({
+  'editor.formatOnSave': true,
+  'editor.indentSize': 2,
+  'editor.defaultFormatter': 'esbenp.prettier-vscode',
 });
 
 project.synth();

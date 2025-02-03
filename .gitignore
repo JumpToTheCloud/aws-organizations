@@ -52,4 +52,6 @@ tsconfig.json
 !/API.md
 site
 !/.github/workflows/deploy-docs.yml
+!/.nvmrc
+!/.vscode/settings.json
 !/.projenrc.ts

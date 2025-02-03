@@ -74,6 +74,17 @@
       ],
       "condition": "git diff --exit-code > /dev/null"
     },
+    "commit": {
+      "name": "commit",
+      "description": "Commit changes with conventional commits prompts provided by Commitizen",
+      "steps": [
+        {
+          "exec": "./node_modules/cz-customizable/standalone.js",
+          "receiveArgs": false,
+          "say": "committing changes"
+        }
+      ]
+    },
     "compat": {
       "name": "compat",
       "description": "Perform API compatibility check against latest version",
