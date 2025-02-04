@@ -14,6 +14,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   constructsVersion: '10.4.2',
   defaultReleaseBranch: 'main',
   jsiiVersion: '~5.7.0',
+  projenVersion: '0.91.7',
   name: '@jttc/aws-organizations',
   projenrcTs: true,
   repositoryUrl: 'git@github.com:JumpToTheCloud/caws-organizations.git',
@@ -27,6 +28,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
       semi: true,
     },
   },
+  autoMerge: false,
   mergify: false,
   release: true,
   jestOptions: {
