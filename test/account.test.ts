@@ -1,3 +1,8 @@
+/**
+ * Tests Account
+ *
+ * @group unit
+ */
 import { App, Stack } from 'aws-cdk-lib';
 import { Template } from 'aws-cdk-lib/assertions';
 import { Account, AccountAttributes, OrganizationUnit } from '../src';

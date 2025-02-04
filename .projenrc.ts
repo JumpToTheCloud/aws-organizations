@@ -63,7 +63,13 @@ const project = new awscdk.AwsCdkConstructLibrary({
   releasableCommits: ReleasableCommits.featuresAndFixes(),
   // deps: [],                /* Runtime dependencies of this module. */
   // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
-  devDeps: ['commitizen', 'cz-customizable'],
+  devDeps: [
+    'commitizen',
+    'cz-customizable',
+    'jest-runner-groups',
+    'jest-runner',
+    'jest-docblock',
+  ],
   packageName: '@jttc/aws-organizations',
 });
 
@@ -78,6 +84,48 @@ project.addTask('commit', {
     },
   ],
 });
+
+const unitTest = project.addTask('test:unit', {
+  description: 'Unit Tests',
+  steps: [
+    {
+      exec: 'jest --group=unit',
+      say: 'Unit Tests',
+      receiveArgs: true,
+    },
+  ],
+});
+
+project.addTask('test:snapshot', {
+  description: 'Snapshots Tests',
+  steps: [
+    {
+      exec: 'jest --group=snapshot --collectCoverage=false',
+      say: 'Snapshots Tests',
+      receiveArgs: true,
+    },
+  ],
+});
+
+project.addTask('test:snapshot:update', {
+  description: 'Update snapshots',
+  steps: [
+    {
+      exec: 'jest --updateSnapshot --collectCoverage=false',
+      say: 'Updating snapshots',
+      receiveArgs: true,
+    },
+  ],
+});
+
+const testTask = project.tasks.tryFind('test');
+const eslintTask = project.tasks.tryFind('eslint');
+
+if (testTask && eslintTask) {
+  testTask.reset();
+  testTask.spawn(unitTest);
+  testTask.spawn(eslintTask);
+}
 
 project.addGitIgnore('site');
 

@@ -57,8 +57,20 @@
       "type": "build"
     },
     {
+      "name": "jest-docblock",
+      "type": "build"
+    },
+    {
       "name": "jest-junit",
       "version": "^16",
+      "type": "build"
+    },
+    {
+      "name": "jest-runner",
+      "type": "build"
+    },
+    {
+      "name": "jest-runner-groups",
       "type": "build"
     },
     {
