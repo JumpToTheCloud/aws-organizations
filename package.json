@@ -2,7 +2,7 @@
   "name": "@jttc/aws-organizations",
   "repository": {
     "type": "git",
-    "url": "git@github.com:JumpToTheCloud/caws-organizations.git"
+    "url": "git@github.com:JumpToTheCloud/aws-organizations.git"
   },
   "scripts": {
     "build": "npx projen build",

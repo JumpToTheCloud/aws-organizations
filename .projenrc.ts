@@ -17,7 +17,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   projenVersion: '0.91.7',
   name: '@jttc/aws-organizations',
   projenrcTs: true,
-  repositoryUrl: 'git@github.com:JumpToTheCloud/caws-organizations.git',
+  repositoryUrl: 'git@github.com:JumpToTheCloud/aws-organizations.git',
   keywords: ['aws', 'cdk', 'organizations'],
   prettier: true,
   prettierOptions: {
