@@ -126,4 +126,17 @@ describe('AWS Organizations Unit', () => {
       },
     });
   });
+
+  it('should create an organization units from organization arn', () => {
+    const rootOrganization = Organization.fromOrganizationArn(
+      stack,
+      'RootOrganization',
+      'arn:aws:organizations::123456789012:root/o-agnj84t7qk/r-m7g5'
+    );
+
+    new OrganizationUnit(stack, 'OrganizationUnitTest', {
+      organizationUnitName: 'test',
+      parent: rootOrganization,
+    });
+  });
 });
