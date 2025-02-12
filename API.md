@@ -703,7 +703,7 @@ Import a Organization from arn.
 *Example*
 
 ```typescript
-   Organization.fromOrganizationArn(this, 'Organization', ''arn:aws:organizations::123456789012:root/o-agnj84t7qk/r-m7g5);
+   Organization.fromOrganizationArn(this, 'Organization', 'arn:aws:organizations::123456789012:root/o-agnj84t7qk/r-m7g5');
 ```
 
 
