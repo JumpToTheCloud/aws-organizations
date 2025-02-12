@@ -33,7 +33,7 @@ The construct provides the option to create the organization in Consolidated Bil
   --8<-- "docs/snippets/organization/organization-consolidated-bill.ts"
   ```
 
-#### Existing organization
+#### Existing organization from attrbutes
 
 The construct provides a method to import a organization from existing one
 
@@ -41,4 +41,14 @@ The construct provides a method to import a organization from existing one
 
   ```typescript linenums="1" hl_lines="8-17"
   --8<-- "docs/snippets/organization/organization-import.ts"
+  ```
+
+#### Existing organization from arn
+
+The construct provides a method to import a organization from the arn of existing one
+
+=== "organization.ts"
+
+  ```typescript linenums="1" hl_lines="8-17"
+  --8<-- "docs/snippets/organization/organization-import-arn.ts"
   ```

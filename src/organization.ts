@@ -1,4 +1,11 @@
-import { Arn, IResource, Resource, Stack } from 'aws-cdk-lib';
+import {
+  Annotations,
+  Arn,
+  ArnFormat,
+  IResource,
+  Resource,
+  Stack,
+} from 'aws-cdk-lib';
 import { CfnOrganization } from 'aws-cdk-lib/aws-organizations';
 import { Construct } from 'constructs';
 
@@ -55,6 +62,11 @@ export interface IOrganization extends IResource {
    * The unique identifier (ID) of the management account of an organization.
    */
   readonly managementAccountId: string;
+
+  /**
+   * The Amazon Resource Name (ARN) of the organization.
+   */
+  readonly organizationArn: string;
 }
 
 export abstract class OrganizationBase
@@ -86,7 +98,7 @@ export interface OrganizationProps {
  */
 export class Organization extends OrganizationBase {
   /**
-   * Import a Organization
+   * Import a Organization from attributes
    * @example
    *    Organization.fromOrganizationAttributes(this, 'Organization', {
    *      organizationId: 'o-xxxx',
@@ -98,7 +110,7 @@ export class Organization extends OrganizationBase {
     scope: Construct,
     id: string,
     attributes: OrganizationAttributes
-  ): OrganizationBase {
+  ): IOrganization {
     class Import extends OrganizationBase {
       public organizationId = attributes.organizationId;
       public organizationArn = Arn.format({
@@ -114,6 +126,78 @@ export class Organization extends OrganizationBase {
     }
 
     return new Import(scope, id);
+  }
+
+  /**
+   * Import a Organization from arn
+   * @example
+   *    Organization.fromOrganizationArn(this, 'Organization', 'arn:aws:organizations::123456789012:root/o-agnj84t7qk/r-m7g5');
+   */
+  public static fromOrganizationArn(
+    scope: Construct,
+    id: string,
+    organizationArn: string
+  ): IOrganization {
+    arnValidation(organizationArn);
+    class Import extends OrganizationBase {
+      public organizationArn = organizationArn;
+      public organizationId = '';
+      public organizationRootId = '';
+      public managementAccountId = '';
+
+      constructor() {
+        super(scope, id);
+
+        const arnComponents = Arn.split(
+          organizationArn,
+          ArnFormat.SLASH_RESOURCE_NAME
+        );
+        if (arnComponents.resourceName) {
+          const organizationId = arnComponents.resourceName.split('/')[0];
+          this.organizationId = organizationId;
+        }
+        if (arnComponents.resourceName) {
+          const organizationRootId = arnComponents.resourceName.split('/')[1];
+          this.organizationRootId = organizationRootId;
+        }
+        if (arnComponents.account) {
+          this.managementAccountId = arnComponents.account;
+        }
+      }
+    }
+
+    return new Import();
+
+    function arnValidation(arn: string) {
+      const arnComponents = Arn.split(arn, ArnFormat.SLASH_RESOURCE_NAME);
+      if (arnComponents.service !== 'organizations') {
+        Annotations.of(scope).addError(
+          `Invalid service: ${arn}. We expect "organizations" and we receive "${arnComponents.service}"`
+        );
+      }
+      if (arnComponents.resource !== 'root') {
+        Annotations.of(scope).addError(
+          `Invalid resource: ${arn}. We expect "root" and we receive "${arnComponents.resource}"`
+        );
+      }
+      if (
+        arnComponents.resourceName &&
+        !arnComponents.resourceName.split('/')[0].startsWith('o-')
+      ) {
+        Annotations.of(scope).addError(
+          `Invalid organization id: ${arn}. It should start with "o-" but we recieve "${arnComponents.resourceName.split('/')[0]}"`
+        );
+      }
+      if (
+        arnComponents.resourceName &&
+        !arnComponents.resourceName.split('/')[1].startsWith('r-')
+      ) {
+        Annotations.of(scope).addError(
+          `Invalid root id: ${arn}. It should start with "r-" but we recieve "${arnComponents.resourceName.split('/')[1]}"`
+        );
+      }
+      return true;
+    }
   }
 
   readonly organizationId: string;

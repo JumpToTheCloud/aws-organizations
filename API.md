@@ -621,7 +621,8 @@ account for data recovery and cleanup later (`RemovalPolicy.RETAIN`).
 | <code><a href="#@jttc/aws-organizations.Organization.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#@jttc/aws-organizations.Organization.isOwnedResource">isOwnedResource</a></code> | Returns true if the construct was created by CDK, and false otherwise. |
 | <code><a href="#@jttc/aws-organizations.Organization.isResource">isResource</a></code> | Check whether the given construct is a Resource. |
-| <code><a href="#@jttc/aws-organizations.Organization.fromOrganizationAttributes">fromOrganizationAttributes</a></code> | Import a Organization. |
+| <code><a href="#@jttc/aws-organizations.Organization.fromOrganizationArn">fromOrganizationArn</a></code> | Import a Organization from arn. |
+| <code><a href="#@jttc/aws-organizations.Organization.fromOrganizationAttributes">fromOrganizationAttributes</a></code> | Import a Organization from attributes. |
 
 ---
 
@@ -689,6 +690,41 @@ Check whether the given construct is a Resource.
 
 ---
 
+##### `fromOrganizationArn` <a name="fromOrganizationArn" id="@jttc/aws-organizations.Organization.fromOrganizationArn"></a>
+
+```typescript
+import { Organization } from '@jttc/aws-organizations'
+
+Organization.fromOrganizationArn(scope: Construct, id: string, organizationArn: string)
+```
+
+Import a Organization from arn.
+
+*Example*
+
+```typescript
+   Organization.fromOrganizationArn(this, 'Organization', 'arn:aws:organizations::123456789012:root/o-agnj84t7qk/r-m7g5');
+```
+
+
+###### `scope`<sup>Required</sup> <a name="scope" id="@jttc/aws-organizations.Organization.fromOrganizationArn.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+###### `id`<sup>Required</sup> <a name="id" id="@jttc/aws-organizations.Organization.fromOrganizationArn.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+###### `organizationArn`<sup>Required</sup> <a name="organizationArn" id="@jttc/aws-organizations.Organization.fromOrganizationArn.parameter.organizationArn"></a>
+
+- *Type:* string
+
+---
+
 ##### `fromOrganizationAttributes` <a name="fromOrganizationAttributes" id="@jttc/aws-organizations.Organization.fromOrganizationAttributes"></a>
 
 ```typescript
@@ -697,7 +733,7 @@ import { Organization } from '@jttc/aws-organizations'
 Organization.fromOrganizationAttributes(scope: Construct, id: string, attributes: OrganizationAttributes)
 ```
 
-Import a Organization.
+Import a Organization from attributes.
 
 *Example*
 
@@ -736,7 +772,7 @@ Import a Organization.
 | <code><a href="#@jttc/aws-organizations.Organization.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
 | <code><a href="#@jttc/aws-organizations.Organization.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
 | <code><a href="#@jttc/aws-organizations.Organization.property.managementAccountId">managementAccountId</a></code> | <code>string</code> | The unique identifier (ID) of the management account of an organization. |
-| <code><a href="#@jttc/aws-organizations.Organization.property.organizationArn">organizationArn</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@jttc/aws-organizations.Organization.property.organizationArn">organizationArn</a></code> | <code>string</code> | The Amazon Resource Name (ARN) of the organization. |
 | <code><a href="#@jttc/aws-organizations.Organization.property.organizationId">organizationId</a></code> | <code>string</code> | The unique identifier (ID) of the organization. |
 | <code><a href="#@jttc/aws-organizations.Organization.property.organizationRootId">organizationRootId</a></code> | <code>string</code> | The unique identifier (ID) of the organization root. |
 
@@ -804,6 +840,8 @@ public readonly organizationArn: string;
 ```
 
 - *Type:* string
+
+The Amazon Resource Name (ARN) of the organization.
 
 ---
 
@@ -991,7 +1029,7 @@ Check whether the given construct is a Resource.
 | <code><a href="#@jttc/aws-organizations.OrganizationBase.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
 | <code><a href="#@jttc/aws-organizations.OrganizationBase.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
 | <code><a href="#@jttc/aws-organizations.OrganizationBase.property.managementAccountId">managementAccountId</a></code> | <code>string</code> | The unique identifier (ID) of the management account of an organization. |
-| <code><a href="#@jttc/aws-organizations.OrganizationBase.property.organizationArn">organizationArn</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@jttc/aws-organizations.OrganizationBase.property.organizationArn">organizationArn</a></code> | <code>string</code> | The Amazon Resource Name (ARN) of the organization. |
 | <code><a href="#@jttc/aws-organizations.OrganizationBase.property.organizationId">organizationId</a></code> | <code>string</code> | The unique identifier (ID) of the organization. |
 | <code><a href="#@jttc/aws-organizations.OrganizationBase.property.organizationRootId">organizationRootId</a></code> | <code>string</code> | The unique identifier (ID) of the organization root. |
 
@@ -1059,6 +1097,8 @@ public readonly organizationArn: string;
 ```
 
 - *Type:* string
+
+The Amazon Resource Name (ARN) of the organization.
 
 ---
 
@@ -2650,6 +2690,7 @@ The name of an IAM role that AWS Organizations automatically preconfigures in th
 | <code><a href="#@jttc/aws-organizations.IOrganization.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
 | <code><a href="#@jttc/aws-organizations.IOrganization.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
 | <code><a href="#@jttc/aws-organizations.IOrganization.property.managementAccountId">managementAccountId</a></code> | <code>string</code> | The unique identifier (ID) of the management account of an organization. |
+| <code><a href="#@jttc/aws-organizations.IOrganization.property.organizationArn">organizationArn</a></code> | <code>string</code> | The Amazon Resource Name (ARN) of the organization. |
 | <code><a href="#@jttc/aws-organizations.IOrganization.property.organizationId">organizationId</a></code> | <code>string</code> | The unique identifier (ID) of the organization. |
 | <code><a href="#@jttc/aws-organizations.IOrganization.property.organizationRootId">organizationRootId</a></code> | <code>string</code> | The unique identifier (ID) of the organization root. |
 
@@ -2707,6 +2748,18 @@ public readonly managementAccountId: string;
 - *Type:* string
 
 The unique identifier (ID) of the management account of an organization.
+
+---
+
+##### `organizationArn`<sup>Required</sup> <a name="organizationArn" id="@jttc/aws-organizations.IOrganization.property.organizationArn"></a>
+
+```typescript
+public readonly organizationArn: string;
+```
+
+- *Type:* string
+
+The Amazon Resource Name (ARN) of the organization.
 
 ---
 
@@ -2845,7 +2898,7 @@ Organization Unit Properties.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@jttc/aws-organizations.IOrganizationUnitProps.property.organizationUnitName">organizationUnitName</a></code> | <code>string</code> | The name of the OU. |
-| <code><a href="#@jttc/aws-organizations.IOrganizationUnitProps.property.parent">parent</a></code> | <code>string \| <a href="#@jttc/aws-organizations.Organization">Organization</a> \| <a href="#@jttc/aws-organizations.OrganizationUnit">OrganizationUnit</a></code> | The unique identifier (ID) of the parent root or OU that you want to create the new OU in. |
+| <code><a href="#@jttc/aws-organizations.IOrganizationUnitProps.property.parent">parent</a></code> | <code>string \| <a href="#@jttc/aws-organizations.IOrganization">IOrganization</a> \| <a href="#@jttc/aws-organizations.OrganizationUnit">OrganizationUnit</a></code> | The unique identifier (ID) of the parent root or OU that you want to create the new OU in. |
 
 ---
 
@@ -2864,10 +2917,10 @@ The name of the OU.
 ##### `parent`<sup>Required</sup> <a name="parent" id="@jttc/aws-organizations.IOrganizationUnitProps.property.parent"></a>
 
 ```typescript
-public readonly parent: string | Organization | OrganizationUnit;
+public readonly parent: string | IOrganization | OrganizationUnit;
 ```
 
-- *Type:* string | <a href="#@jttc/aws-organizations.Organization">Organization</a> | <a href="#@jttc/aws-organizations.OrganizationUnit">OrganizationUnit</a>
+- *Type:* string | <a href="#@jttc/aws-organizations.IOrganization">IOrganization</a> | <a href="#@jttc/aws-organizations.OrganizationUnit">OrganizationUnit</a>
 
 The unique identifier (ID) of the parent root or OU that you want to create the new OU in.
 

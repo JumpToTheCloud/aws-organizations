@@ -1,7 +1,7 @@
 import { IResource, Resource } from 'aws-cdk-lib';
 import { CfnOrganizationalUnit } from 'aws-cdk-lib/aws-organizations';
 import { Construct } from 'constructs';
-import { Organization } from './organization';
+import { IOrganization, Organization } from './organization';
 
 export interface OrganizationUnitAttributes {
   /**
@@ -61,7 +61,7 @@ export interface IOrganizationUnitProps {
    * The unique identifier (ID) of the parent root
    * or OU that you want to create the new OU in.
    */
-  readonly parent: string | Organization | OrganizationUnit;
+  readonly parent: string | IOrganization | OrganizationUnit;
 }
 
 /**
