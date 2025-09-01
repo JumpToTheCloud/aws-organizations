@@ -581,6 +581,7 @@ new Organization(scope: Construct, id: string, props?: OrganizationProps)
 | --- | --- |
 | <code><a href="#@jttc/aws-organizations.Organization.toString">toString</a></code> | Returns a string representation of this construct. |
 | <code><a href="#@jttc/aws-organizations.Organization.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
+| <code><a href="#@jttc/aws-organizations.Organization.addOrganizationUnit">addOrganizationUnit</a></code> | *No description.* |
 
 ---
 
@@ -611,6 +612,18 @@ account for data recovery and cleanup later (`RemovalPolicy.RETAIN`).
 ###### `policy`<sup>Required</sup> <a name="policy" id="@jttc/aws-organizations.Organization.applyRemovalPolicy.parameter.policy"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicy
+
+---
+
+##### `addOrganizationUnit` <a name="addOrganizationUnit" id="@jttc/aws-organizations.Organization.addOrganizationUnit"></a>
+
+```typescript
+public addOrganizationUnit(organizationUnitName: string): void
+```
+
+###### `organizationUnitName`<sup>Required</sup> <a name="organizationUnitName" id="@jttc/aws-organizations.Organization.addOrganizationUnit.parameter.organizationUnitName"></a>
+
+- *Type:* string
 
 ---
 
@@ -914,6 +927,7 @@ new OrganizationBase(scope: Construct, id: string, props?: ResourceProps)
 | --- | --- |
 | <code><a href="#@jttc/aws-organizations.OrganizationBase.toString">toString</a></code> | Returns a string representation of this construct. |
 | <code><a href="#@jttc/aws-organizations.OrganizationBase.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
+| <code><a href="#@jttc/aws-organizations.OrganizationBase.addOrganizationUnit">addOrganizationUnit</a></code> | *No description.* |
 
 ---
 
@@ -944,6 +958,18 @@ account for data recovery and cleanup later (`RemovalPolicy.RETAIN`).
 ###### `policy`<sup>Required</sup> <a name="policy" id="@jttc/aws-organizations.OrganizationBase.applyRemovalPolicy.parameter.policy"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicy
+
+---
+
+##### `addOrganizationUnit` <a name="addOrganizationUnit" id="@jttc/aws-organizations.OrganizationBase.addOrganizationUnit"></a>
+
+```typescript
+public addOrganizationUnit(organizationUnitName: string): void
+```
+
+###### `organizationUnitName`<sup>Required</sup> <a name="organizationUnitName" id="@jttc/aws-organizations.OrganizationBase.addOrganizationUnit.parameter.organizationUnitName"></a>
+
+- *Type:* string
 
 ---
 
@@ -2914,7 +2940,7 @@ The name of the OU.
 
 ---
 
-##### `parent`<sup>Required</sup> <a name="parent" id="@jttc/aws-organizations.IOrganizationUnitProps.property.parent"></a>
+##### `parent`<sup>Optional</sup> <a name="parent" id="@jttc/aws-organizations.IOrganizationUnitProps.property.parent"></a>
 
 ```typescript
 public readonly parent: string | IOrganization | OrganizationUnit;
