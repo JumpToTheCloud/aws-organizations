@@ -136,4 +136,17 @@ describe('AWS Organizations', () => {
       `Invalid root id: ${wrongArn}. It should start with "r-" but we recieve "k-m7g5"`
     );
   });
+
+  it('should add organization unit', () => {
+    const organization = new Organization(stack, 'Organization', {
+      featureSet: OrganizationFeatureSet.CONSOLIDATED_BILLING,
+    });
+
+    organization.addOrganizationUnit('Test');
+
+    const template = Template.fromStack(stack);
+    template.hasResourceProperties('AWS::Organizations::OrganizationalUnit', {
+      Name: 'Test',
+    });
+  });
 });

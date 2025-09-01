@@ -61,7 +61,7 @@ export interface IOrganizationUnitProps {
    * The unique identifier (ID) of the parent root
    * or OU that you want to create the new OU in.
    */
-  readonly parent: string | IOrganization | OrganizationUnit;
+  readonly parent?: string | IOrganization | OrganizationUnit;
 }
 
 /**
