@@ -50,6 +50,7 @@ junit.xml
 .jsii
 tsconfig.json
 !/API.md
+!/.lintstagedrc
 site
 !/.github/workflows/deploy-docs.yml
 !/.nvmrc
