@@ -8,6 +8,7 @@ import {
 } from 'aws-cdk-lib';
 import { CfnOrganization } from 'aws-cdk-lib/aws-organizations';
 import { Construct } from 'constructs';
+import { OrganizationUnit } from './organization-unit';
 
 /**
  * Specifies the feature set supported by the new organization.
@@ -80,6 +81,12 @@ export abstract class OrganizationBase
   public abstract readonly organizationRootId: string;
 
   public abstract readonly managementAccountId: string;
+
+  public addOrganizationUnit(organizationUnitName: string): void {
+    new OrganizationUnit(this, 'Org', {
+      organizationUnitName,
+    });
+  }
 }
 
 export interface OrganizationProps {
