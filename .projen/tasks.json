@@ -230,12 +230,21 @@
       "name": "pre-compile",
       "description": "Prepare the project for compilation"
     },
+    "prepare": {
+      "name": "prepare",
+      "description": "Init husky",
+      "steps": [
+        {
+          "exec": "husky",
+          "say": "Preparing husky"
+        }
+      ]
+    },
     "release": {
       "name": "release",
       "description": "Prepare a release from \"main\" branch",
       "env": {
-        "RELEASE": "true",
-        "PRERELEASE": "beta"
+        "RELEASE": "true"
       },
       "steps": [
         {
@@ -335,13 +344,13 @@
       },
       "steps": [
         {
-          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@types/jest,@types/node,commitizen,cz-customizable,eslint-config-prettier,eslint-import-resolver-typescript,eslint-plugin-import,eslint-plugin-prettier,jest,jest-docblock,jest-runner,jest-runner-groups,jsii-diff,jsii-pacmak,prettier,ts-jest,ts-node,typescript"
+          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@types/jest,@types/node,commitizen,cz-customizable,eslint-config-prettier,eslint-import-resolver-typescript,eslint-plugin-import,eslint-plugin-prettier,husky,jest,jest-docblock,jest-runner,jest-runner-groups,jsii-diff,jsii-pacmak,prettier,ts-jest,ts-node,typescript"
         },
         {
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser commit-and-tag-version commitizen cz-customizable eslint-config-prettier eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-prettier eslint jest jest-docblock jest-junit jest-runner jest-runner-groups jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii prettier projen ts-jest ts-node typescript aws-cdk-lib constructs"
+          "exec": "yarn upgrade @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser commit-and-tag-version commitizen cz-customizable eslint-config-prettier eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-prettier eslint husky jest jest-docblock jest-junit jest-runner jest-runner-groups jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii prettier projen ts-jest ts-node typescript aws-cdk-lib constructs"
         },
         {
           "exec": "npx projen"

@@ -65,6 +65,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   // deps: [],                /* Runtime dependencies of this module. */
   // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
   devDeps: [
+    'husky',
     'commitizen',
     'cz-customizable',
     'jest-runner-groups',
@@ -82,6 +83,16 @@ project.addTask('commit', {
       exec: './node_modules/cz-customizable/standalone.js',
       receiveArgs: false,
       say: 'committing changes',
+    },
+  ],
+});
+
+project.addTask('prepare', {
+  description: 'Init husky',
+  steps: [
+    {
+      exec: 'husky',
+      say: 'Preparing husky',
     },
   ],
 });
