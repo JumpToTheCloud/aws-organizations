@@ -11,7 +11,7 @@ import { VsCode } from 'projen/lib/vscode';
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'Jump to the Cloud',
   authorAddress: 'antonio.marquez@jumptothecloud.tech',
-  cdkVersion: '2.173.0',
+  cdkVersion: '2.213.0',
   constructsVersion: '10.4.2',
   defaultReleaseBranch: 'main',
   jsiiVersion: '~5.8.0',
@@ -273,7 +273,7 @@ deployDocs?.addJob('deploy-docs', {
 });
 
 new TextFile(project, '.nvmrc', {
-  lines: ['v20.18.2'],
+  lines: ['v22.12.0'],
 });
 
 const vscode = new VsCode(project);
