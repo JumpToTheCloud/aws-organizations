@@ -1,10 +1,11 @@
-import { ReleasableCommits, TextFile, awscdk } from 'projen';
+import { ReleasableCommits, TextFile, awscdk, JsonFile } from 'projen';
 import { GithubCredentials } from 'projen/lib/github';
 import {
   AppPermission,
   JobPermission,
 } from 'projen/lib/github/workflows-model';
 import { TrailingComma } from 'projen/lib/javascript';
+import { ReleaseTrigger } from 'projen/lib/release';
 import { VsCode } from 'projen/lib/vscode';
 
 const project = new awscdk.AwsCdkConstructLibrary({
@@ -13,8 +14,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
   cdkVersion: '2.173.0',
   constructsVersion: '10.4.2',
   defaultReleaseBranch: 'main',
-  jsiiVersion: '~5.7.0',
-  projenVersion: '0.91.7',
+  jsiiVersion: '~5.8.0',
+  projenVersion: '0.95.5',
   name: '@jttc/aws-organizations',
   projenrcTs: true,
   repositoryUrl: 'git@github.com:JumpToTheCloud/aws-organizations.git',
@@ -31,6 +32,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
   autoMerge: false,
   mergify: false,
   release: true,
+  releaseTrigger: ReleaseTrigger.workflowDispatch(),
+  releasableCommits: ReleasableCommits.featuresAndFixes(),
   jestOptions: {
     jestConfig: {
       verbose: true,
@@ -59,11 +62,11 @@ const project = new awscdk.AwsCdkConstructLibrary({
       },
     },
   },
-  prerelease: 'beta',
-  releasableCommits: ReleasableCommits.featuresAndFixes(),
   // deps: [],                /* Runtime dependencies of this module. */
   // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
   devDeps: [
+    'husky',
+    'lint-staged',
     'commitizen',
     'cz-customizable',
     'jest-runner-groups',
@@ -83,6 +86,39 @@ project.addTask('commit', {
       say: 'committing changes',
     },
   ],
+});
+
+project.addTask('prepare', {
+  description: 'Init husky',
+  steps: [
+    {
+      exec: 'husky',
+      say: 'Preparing husky',
+    },
+  ],
+});
+
+project.addTask('lint-staged', {
+  description: 'Lint Staged files',
+  receiveArgs: true,
+  steps: [
+    {
+      exec: 'lint-staged',
+    },
+  ],
+});
+
+project.addTask('prettier', {
+  description: 'Format files with Prettier',
+  receiveArgs: true,
+  exec: 'prettier',
+});
+
+new JsonFile(project, '.lintstagedrc', {
+  obj: {
+    '*.ts': ['prettier --check', 'yarn eslint'],
+    '*.md': 'prettier --check',
+  },
 });
 
 const unitTest = project.addTask('test:unit', {
