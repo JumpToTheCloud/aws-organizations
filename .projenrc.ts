@@ -175,6 +175,18 @@ project.addTask('docs:serve', {
   exec: 'mkdocs serve -a localhost:8099',
 });
 
+const upgradeWorkflow = project.github?.tryFindWorkflow('upgrade-main');
+
+if (upgradeWorkflow) {
+  upgradeWorkflow.on({
+    schedule: [
+      {
+        cron: '0 0 * * 1',
+      },
+    ],
+  });
+}
+
 const deployDocs = project.github?.addWorkflow('deploy-docs');
 deployDocs?.on({
   workflowDispatch: {},
