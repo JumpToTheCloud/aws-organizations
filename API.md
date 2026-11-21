@@ -4,6 +4,8 @@
 
 ### Account <a name="Account" id="@jttc/aws-organizations.Account"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable, aws-cdk-lib.IResource, <a href="#@jttc/aws-organizations.IAccount">IAccount</a>
+
 Create a new AWS Account.
 
 #### Initializers <a name="Initializers" id="@jttc/aws-organizations.Account.Initializer"></a>
@@ -45,6 +47,7 @@ new Account(scope: Construct, id: string, props: AccountProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@jttc/aws-organizations.Account.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@jttc/aws-organizations.Account.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@jttc/aws-organizations.Account.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
 
 ---
@@ -56,6 +59,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@jttc/aws-organizations.Account.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@jttc/aws-organizations.Account.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="@jttc/aws-organizations.Account.applyRemovalPolicy"></a>
 
@@ -288,7 +312,7 @@ The name of an IAM role that AWS Organizations automatically preconfigures in th
 
 ### AccountBase <a name="AccountBase" id="@jttc/aws-organizations.AccountBase"></a>
 
-- *Implements:* <a href="#@jttc/aws-organizations.IAccount">IAccount</a>
+- *Implements:* constructs.IConstruct, constructs.IDependable, aws-cdk-lib.IResource, <a href="#@jttc/aws-organizations.IAccount">IAccount</a>
 
 #### Initializers <a name="Initializers" id="@jttc/aws-organizations.AccountBase.Initializer"></a>
 
@@ -329,6 +353,7 @@ new AccountBase(scope: Construct, id: string, props?: ResourceProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@jttc/aws-organizations.AccountBase.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@jttc/aws-organizations.AccountBase.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@jttc/aws-organizations.AccountBase.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
 
 ---
@@ -340,6 +365,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@jttc/aws-organizations.AccountBase.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@jttc/aws-organizations.AccountBase.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="@jttc/aws-organizations.AccountBase.applyRemovalPolicy"></a>
 
@@ -532,6 +578,8 @@ The name of an IAM role that AWS Organizations automatically preconfigures in th
 
 ### Organization <a name="Organization" id="@jttc/aws-organizations.Organization"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable, aws-cdk-lib.IResource, <a href="#@jttc/aws-organizations.IOrganization">IOrganization</a>
+
 Create a new organization.
 
 *Example*
@@ -580,6 +628,7 @@ new Organization(scope: Construct, id: string, props?: OrganizationProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@jttc/aws-organizations.Organization.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@jttc/aws-organizations.Organization.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@jttc/aws-organizations.Organization.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
 | <code><a href="#@jttc/aws-organizations.Organization.addOrganizationUnit">addOrganizationUnit</a></code> | *No description.* |
 
@@ -592,6 +641,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@jttc/aws-organizations.Organization.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@jttc/aws-organizations.Organization.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="@jttc/aws-organizations.Organization.applyRemovalPolicy"></a>
 
@@ -885,7 +955,7 @@ The unique identifier (ID) of the organization root.
 
 ### OrganizationBase <a name="OrganizationBase" id="@jttc/aws-organizations.OrganizationBase"></a>
 
-- *Implements:* <a href="#@jttc/aws-organizations.IOrganization">IOrganization</a>
+- *Implements:* constructs.IConstruct, constructs.IDependable, aws-cdk-lib.IResource, <a href="#@jttc/aws-organizations.IOrganization">IOrganization</a>
 
 #### Initializers <a name="Initializers" id="@jttc/aws-organizations.OrganizationBase.Initializer"></a>
 
@@ -926,6 +996,7 @@ new OrganizationBase(scope: Construct, id: string, props?: ResourceProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@jttc/aws-organizations.OrganizationBase.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@jttc/aws-organizations.OrganizationBase.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@jttc/aws-organizations.OrganizationBase.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
 | <code><a href="#@jttc/aws-organizations.OrganizationBase.addOrganizationUnit">addOrganizationUnit</a></code> | *No description.* |
 
@@ -938,6 +1009,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@jttc/aws-organizations.OrganizationBase.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@jttc/aws-organizations.OrganizationBase.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="@jttc/aws-organizations.OrganizationBase.applyRemovalPolicy"></a>
 
@@ -1155,6 +1247,8 @@ The unique identifier (ID) of the organization root.
 
 ### OrganizationUnit <a name="OrganizationUnit" id="@jttc/aws-organizations.OrganizationUnit"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable, aws-cdk-lib.IResource, <a href="#@jttc/aws-organizations.IOrganizationUnits">IOrganizationUnits</a>
+
 Create a new Organization Unit.
 
 *Example*
@@ -1206,6 +1300,7 @@ new OrganizationUnit(scope: Construct, id: string, props: IOrganizationUnitProps
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@jttc/aws-organizations.OrganizationUnit.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@jttc/aws-organizations.OrganizationUnit.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@jttc/aws-organizations.OrganizationUnit.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
 
 ---
@@ -1217,6 +1312,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@jttc/aws-organizations.OrganizationUnit.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@jttc/aws-organizations.OrganizationUnit.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="@jttc/aws-organizations.OrganizationUnit.applyRemovalPolicy"></a>
 
@@ -1436,7 +1552,7 @@ The Organization Unit name.
 
 ### OrganizationUnitBase <a name="OrganizationUnitBase" id="@jttc/aws-organizations.OrganizationUnitBase"></a>
 
-- *Implements:* <a href="#@jttc/aws-organizations.IOrganizationUnits">IOrganizationUnits</a>
+- *Implements:* constructs.IConstruct, constructs.IDependable, aws-cdk-lib.IResource, <a href="#@jttc/aws-organizations.IOrganizationUnits">IOrganizationUnits</a>
 
 #### Initializers <a name="Initializers" id="@jttc/aws-organizations.OrganizationUnitBase.Initializer"></a>
 
@@ -1477,6 +1593,7 @@ new OrganizationUnitBase(scope: Construct, id: string, props?: ResourceProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@jttc/aws-organizations.OrganizationUnitBase.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@jttc/aws-organizations.OrganizationUnitBase.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@jttc/aws-organizations.OrganizationUnitBase.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
 
 ---
@@ -1488,6 +1605,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@jttc/aws-organizations.OrganizationUnitBase.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@jttc/aws-organizations.OrganizationUnitBase.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="@jttc/aws-organizations.OrganizationUnitBase.applyRemovalPolicy"></a>
 
@@ -1680,7 +1818,7 @@ The name of the OU.
 
 ### OrganzationPolicyBase <a name="OrganzationPolicyBase" id="@jttc/aws-organizations.OrganzationPolicyBase"></a>
 
-- *Implements:* <a href="#@jttc/aws-organizations.IOrganizationPolicy">IOrganizationPolicy</a>
+- *Implements:* constructs.IConstruct, constructs.IDependable, aws-cdk-lib.IResource, <a href="#@jttc/aws-organizations.IOrganizationPolicy">IOrganizationPolicy</a>
 
 #### Initializers <a name="Initializers" id="@jttc/aws-organizations.OrganzationPolicyBase.Initializer"></a>
 
@@ -1721,6 +1859,7 @@ new OrganzationPolicyBase(scope: Construct, id: string, props?: ResourceProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@jttc/aws-organizations.OrganzationPolicyBase.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@jttc/aws-organizations.OrganzationPolicyBase.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@jttc/aws-organizations.OrganzationPolicyBase.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
 
 ---
@@ -1732,6 +1871,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@jttc/aws-organizations.OrganzationPolicyBase.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@jttc/aws-organizations.OrganzationPolicyBase.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="@jttc/aws-organizations.OrganzationPolicyBase.applyRemovalPolicy"></a>
 
@@ -1924,6 +2084,8 @@ List of unique identifiers (IDs) of the root, OU, or account that you want to at
 
 ### ServiceControlPolicy <a name="ServiceControlPolicy" id="@jttc/aws-organizations.ServiceControlPolicy"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable, aws-cdk-lib.IResource, <a href="#@jttc/aws-organizations.IOrganizationPolicy">IOrganizationPolicy</a>
+
 Creates a policy of a specified type that you can attach to a root, an organizational unit (OU), or an individual AWS account.
 
 *Example*
@@ -1984,6 +2146,7 @@ new ServiceControlPolicy(scope: Construct, id: string, props: ServiceControlPoli
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@jttc/aws-organizations.ServiceControlPolicy.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@jttc/aws-organizations.ServiceControlPolicy.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@jttc/aws-organizations.ServiceControlPolicy.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
 | <code><a href="#@jttc/aws-organizations.ServiceControlPolicy.addTarget">addTarget</a></code> | Add a target which will be applied this Policy. |
 
@@ -1996,6 +2159,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@jttc/aws-organizations.ServiceControlPolicy.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@jttc/aws-organizations.ServiceControlPolicy.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="@jttc/aws-organizations.ServiceControlPolicy.applyRemovalPolicy"></a>
 
